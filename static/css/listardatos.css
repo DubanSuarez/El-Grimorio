@@ -1,0 +1,1105 @@
+/* =====================================================
+   PÁGINA LISTAR LIBROS
+===================================================== */
+
+.libros-page {
+    width: min(1400px, 94%);
+    margin: 0 auto;
+    padding: 55px 0 70px;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.libros-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+
+.libros-header h1 {
+    margin: 0 0 6px;
+    color: #C9A45C;
+    font-family: "Cinzel", serif;
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 600;
+}
+
+
+.libros-header p {
+    margin: 0;
+    color: #bdbdbd;
+    font-family: "Lora", serif;
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   BOTÓN NUEVO LIBRO
+===================================================== */
+
+.btn-nuevo-libro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background-color: #243B55;
+    color: white;
+    border: 1px solid #243B55;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "Lora", serif;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.btn-nuevo-libro iconify-icon {
+    font-size: 22px;
+}
+
+
+.btn-nuevo-libro:hover {
+    background-color: transparent;
+    color: #4e9af0;
+
+    transform: translateY(-2px);
+}
+
+.btnBuscar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 9px 16px !important;
+    background-color: #243B55 !important;
+    color: white !important;
+}
+
+.btnBuscar iconify-icon {
+    font-size: 22px;
+}
+
+
+
+/* =====================================================
+   CONTENEDOR TABLA
+===================================================== */
+
+/* Tabla El Grimorio */
+.tabla-grimorio {
+    --bs-table-bg: transparent !important;
+    --bs-table-color: #fff !important;
+    --bs-table-border-color: rgba(201, 192, 192, 0.3) !important;
+
+    background-color: transparent !important;
+    color: #fff !important;
+}
+
+/* Encabezado */
+.tabla-grimorio thead {
+    background-color: rgba(80, 69, 48, 0.15) !important;
+    color: #C9A45C !important;
+}
+
+/* Celdas */
+.tabla-grimorio th,
+.tabla-grimorio td {
+    background-color: transparent !important;
+    color: #fff !important;
+    border-color: rgba(172, 139, 73, 0.3) !important;
+}
+
+/* Efecto hover */
+.tabla-grimorio tbody tr:hover td,
+.tabla-grimorio tbody tr:hover th {
+    background-color: rgba(201, 164, 92, 0.08) !important;
+    color: #fff !important;
+}
+
+.btnaccion iconify-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px;
+}
+
+
+
+
+
+
+/* =========================
+   PAGINACIÓN EL GRIMORIO
+   ========================= */
+
+.paginacion-grimorio {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.paginacion-grimorio .pagination {
+    gap: 5px;
+    margin: 0;
+}
+
+.paginacion-grimorio .page-item {
+    margin: 0;
+}
+
+.paginacion-grimorio .page-link {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+
+    background-color: transparent;
+    color: #C9A45C;
+
+    border: 1px solid rgba(201, 164, 92, 0.4);
+    border-radius: 6px;
+
+    font-family: 'Lora', serif;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+
+.paginacion-grimorio .page-link:hover {
+    background-color: rgba(201, 164, 92, 0.15);
+    color: #fff;
+    border-color: #C9A45C;
+}
+
+/* Página activa */
+
+.paginacion-grimorio .page-item.active .page-link {
+    background-color: #C9A45C;
+    color: #000;
+    border-color: #C9A45C;
+}
+
+/* Botones deshabilitados */
+
+.paginacion-grimorio .page-item.disabled .page-link {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+
+
+
+
+/* Imagenes libros */
+
+.imagen-libro {
+    width: 55px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   FORMULARIO - EL GRIMORIO
+======================================== */
+
+.grimorio-form {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 45px;
+    background: #111111;
+    border: 1px solid #c9a45c;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Encabezado */
+
+.form-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.form-header .form-icon {
+    color: #c9a45c;
+    font-size: 30px;
+}
+
+.form-header h1 {
+    margin: 8px 0;
+    color: #c9a45c;
+    font-family: "Cinzel", serif;
+    font-size: 34px;
+}
+
+.form-header p {
+    margin: 0;
+    color: #bdbdbd;
+    font-family: "Lora", serif;
+}
+
+
+/* Secciones */
+
+.form-section {
+    padding: 28px 0;
+    border-top: 1px solid rgba(201, 164, 92, 0.25);
+}
+
+.form-section h3 {
+    margin-bottom: 25px;
+    color: #c9a45c;
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+}
+
+
+/* Etiquetas */
+
+.grimorio-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e4d5b5;
+    font-family: "Lora", serif;
+    font-size: 15px;
+}
+
+
+/* Inputs */
+
+.grimorio-input {
+    min-height: 45px;
+    background-color: #1c1c1c !important;
+    border: 1px solid #494949 !important;
+    border-radius: 6px !important;
+    color: #eeeeee !important;
+    font-family: "Lora", serif;
+    transition: 0.25s;
+}
+
+.grimorio-input::placeholder {
+    color: #777777;
+}
+
+.grimorio-input:focus {
+    border-color: #c9a45c !important;
+    box-shadow: 0 0 0 2px rgba(201, 164, 92, 0.12) !important;
+}
+
+
+/* Select */
+
+select.grimorio-input option {
+    background: #1c1c1c;
+    color: #eeeeee;
+}
+
+
+/* Textarea */
+
+textarea.grimorio-input {
+    resize: vertical;
+    min-height: 130px;
+}
+
+
+/* Imagen */
+
+.image-upload small {
+    display: block;
+    margin-top: 7px;
+    color: #888888;
+    font-size: 12px;
+}
+
+
+/* Botones */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(201, 164, 92, 0.25);
+}
+
+.btn-guardar,
+.btn-cancelar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+
+    transition: 0.25s;
+}
+
+
+/* Guardar */
+
+.btn-guardar {
+    border: 1px solid #c9a45c;
+    background: #c9a45c;
+    color: #111111;
+}
+
+.btn-guardar:hover {
+    background: #dfbd78;
+    border-color: #dfbd78;
+}
+
+
+/* Cancelar */
+
+.btn-cancelar {
+    border: 1px solid #555555;
+    color: #bbbbbb;
+    background: transparent;
+}
+
+.btn-cancelar:hover {
+    border-color: #c9a45c;
+    color: #c9a45c;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .grimorio-form {
+        padding: 25px 20px;
+        margin: 20px auto;
+    }
+
+    .form-header h1 {
+        font-size: 28px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn-guardar,
+    .btn-cancelar {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PERFIL — EL GRIMORIO
+===================================================== */
+
+.perfil-page {
+    width: 90%;
+    max-width: 950px;
+    margin: 120px auto 60px;
+    font-family: "Lora", serif;
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+.perfil-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.perfil-title h1 {
+    font-family: "Cinzel", serif;
+    color: #C9A45C;
+    font-size: 38px;
+    letter-spacing: 2px;
+    margin: 5px 0;
+}
+
+.perfil-title p {
+    color: #aaa;
+    font-style: italic;
+    margin: 0;
+}
+
+.perfil-ornamento {
+    color: #C9A45C;
+    font-size: 20px;
+}
+
+.linea-dorada {
+    width: 90px;
+    height: 1px;
+    background: #C9A45C;
+    margin: 15px auto;
+}
+
+
+/* =====================================================
+   TARJETA PRINCIPAL
+===================================================== */
+
+.perfil-card {
+    position: relative;
+
+    background: #111;
+
+    border: 1px solid rgba(201, 164, 92, 0.45);
+
+    padding: 40px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        inset 0 0 40px rgba(201, 164, 92, 0.03);
+}
+
+
+/* Decoración de las esquinas */
+
+.perfil-card::before,
+.perfil-card::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: #C9A45C;
+
+    font-size: 20px;
+}
+
+.perfil-card::before {
+    top: 12px;
+    left: 15px;
+}
+
+.perfil-card::after {
+    bottom: 12px;
+    right: 15px;
+}
+
+
+/* =====================================================
+   CABECERA DEL PERFIL
+===================================================== */
+
+.perfil-card-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+/* Emblema */
+
+.perfil-emblema {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #C9A45C;
+
+    border-radius: 50%;
+
+    color: #C9A45C;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 0 20px rgba(201, 164, 92, 0.08);
+}
+
+.perfil-identidad h2 {
+    margin: 0;
+
+    color: #f2f2f2;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+}
+
+.perfil-identidad p {
+    margin: 7px 0 0;
+
+    color: #C9A45C;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   DIVISOR
+===================================================== */
+
+.divisor-grimorio {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.divisor-grimorio::before,
+.divisor-grimorio::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: rgba(201, 164, 92, 0.3);
+}
+
+.divisor-grimorio span {
+    color: #C9A45C;
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.perfil-content h3 {
+    color: #C9A45C;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+.perfil-content h3 i {
+    margin-right: 8px;
+}
+
+
+/* =====================================================
+   DATOS
+===================================================== */
+
+.perfil-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.perfil-dato {
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border-left: 2px solid #C9A45C;
+
+    transition: 0.3s;
+}
+
+.perfil-dato:hover {
+    background: rgba(201, 164, 92, 0.05);
+}
+
+.perfil-dato span,
+.cuenta-info span {
+    display: block;
+
+    color: #888;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.perfil-dato strong,
+.cuenta-info strong {
+    color: #eee;
+
+    font-family: "Lora", serif;
+
+    font-weight: normal;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   CUENTA
+===================================================== */
+
+.cuenta-title {
+    margin-top: 35px;
+}
+
+.cuenta-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.cuenta-info > div {
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(201, 164, 92, 0.15);
+}
+
+
+/* Estado */
+
+.estado {
+    color: #8fae75 !important;
+}
+
+.estado i {
+    font-size: 8px;
+
+    margin-right: 5px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.perfil-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(201, 164, 92, 0.2);
+}
+
+
+/* Botones */
+
+.btn-volver,
+.btn-logout {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    text-decoration: none;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.btn-volver {
+    color: #C9A45C;
+
+    border: 1px solid rgba(201, 164, 92, 0.4);
+}
+
+.btn-volver:hover {
+    background: #C9A45C;
+
+    color: #111;
+}
+
+.btn-logout {
+    color: #999;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-logout:hover {
+    color: #fff;
+
+    border-color: #C9A45C;
+}
+
+
+/* =====================================================
+   FRASE
+===================================================== */
+
+.perfil-frase {
+    text-align: center;
+
+    max-width: 600px;
+
+    margin: 35px auto 0;
+
+    color: #777;
+
+    font-style: italic;
+}
+
+.perfil-frase span {
+    color: #C9A45C;
+
+    font-size: 20px;
+}
+
+.perfil-frase p {
+    display: inline;
+
+    margin: 0 8px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .perfil-page {
+        width: 94%;
+
+        margin-top: 100px;
+    }
+
+    .perfil-card {
+        padding: 25px;
+    }
+
+    .perfil-card-header {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .perfil-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cuenta-info {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-footer {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .btn-volver,
+    .btn-logout {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   RESUMEN ADICIONAL DEL DASHBOARD
+   ========================================================= */
+
+.dashboard-summary {
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.summary-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 105px;
+
+    padding: 20px 24px;
+
+    background: linear-gradient(
+        135deg,
+        #111111,
+        #181818
+    );
+
+    border: 1px solid rgba(201, 164, 92, 0.35);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.25),
+        inset 0 0 20px rgba(201, 164, 92, 0.025);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   EFECTO HOVER
+   ========================================================= */
+
+.summary-card:hover {
+
+    transform: translateY(-3px);
+
+    border-color: rgba(201, 164, 92, 0.7);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(201, 164, 92, 0.08);
+}
+
+
+/* =========================================================
+   ICONO
+   ========================================================= */
+
+.summary-icon {
+
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 18px;
+
+    color: #C9A45C;
+
+    font-size: 27px;
+
+    background: rgba(201, 164, 92, 0.08);
+
+    border: 1px solid rgba(201, 164, 92, 0.3);
+
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 0 12px rgba(201, 164, 92, 0.04);
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.summary-card > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+/* =========================================================
+   NÚMERO
+   ========================================================= */
+
+.summary-card strong {
+
+    color: #C9A45C;
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.summary-card span:not(.summary-icon) {
+
+    color: #cfcfcf;
+
+    font-family: 'Lora', serif;
+
+    font-size: 14px;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   DETALLE DECORATIVO
+   ========================================================= */
+
+.summary-card::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    right: 18px;
+    top: 13px;
+
+    color: rgba(201, 164, 92, 0.18);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .dashboard-summary .col-md-4 {
+
+        margin-bottom: 15px;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .dashboard-summary {
+
+        margin-top: 25px;
+
+    }
+
+
+    .summary-card {
+
+        min-height: 95px;
+
+        padding: 17px 20px;
+
+    }
+
+
+    .summary-icon {
+
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        margin-right: 15px;
+
+        font-size: 23px;
+
+    }
+
+
+    .summary-card strong {
+
+        font-size: 24px;
+
+    }
+
+
+    .summary-card span:not(.summary-icon) {
+
+        font-size: 13px;
+
+    }
+
+}

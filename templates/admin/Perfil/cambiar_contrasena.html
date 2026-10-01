@@ -1,0 +1,357 @@
+{% include 'components/cabecera_admin.html' %}
+
+
+<main class="perfil-page">
+
+    <!-- ========================= -->
+    <!-- ENCABEZADO -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-title">
+
+            <span class="perfil-ornamento">
+                ✦
+            </span>
+
+            <h1>
+                Cambiar contraseña
+            </h1>
+
+            <p>
+                Actualiza la contraseña de acceso a El Grimorio
+            </p>
+
+            <div class="linea-dorada"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FORMULARIO -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="grimorio-form password-form">
+
+
+            <!-- ========================= -->
+            <!-- CABECERA -->
+            <!-- ========================= -->
+
+            <div class="form-header">
+
+                <span class="form-icon">
+
+                    <i class="fa-solid fa-key"></i>
+
+                </span>
+
+                <h2>
+                    Seguridad de la cuenta
+                </h2>
+
+                <p>
+                    Para proteger tu cuenta, verifica tu contraseña actual antes de establecer una nueva.
+                </p>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- MENSAJES -->
+            <!-- ========================= -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    {% for category, message in messages %}
+
+                        <div
+                            class="alert alert-{{ category }}"
+                            role="alert"
+                        >
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+
+            <!-- ========================= -->
+            <!-- FORMULARIO -->
+            <!-- ========================= -->
+
+            <form
+                action="{{ url_for('perfil.cambiar_password') }}"
+                method="POST"
+            >
+
+
+                <!-- ========================= -->
+                <!-- CONTRASEÑA ACTUAL -->
+                <!-- ========================= -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="txtContrasenaActual"
+                        class="form-label grimorio-label"
+                    >
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Contraseña actual
+
+                    </label>
+
+
+                    <div class="password-input">
+
+                        <input
+                            type="password"
+                            name="txtContrasenaActual"
+                            id="txtContrasenaActual"
+                            class="form-control grimorio-input"
+                            placeholder="Ingresa tu contraseña actual"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="btn-ver-password"
+                            onclick="mostrarPassword('txtContrasenaActual', this)"
+                            aria-label="Mostrar contraseña"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- NUEVA CONTRASEÑA -->
+                <!-- ========================= -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="txtNuevaContrasena"
+                        class="form-label grimorio-label"
+                    >
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Nueva contraseña
+
+                    </label>
+
+
+                    <div class="password-input">
+
+                        <input
+                            type="password"
+                            name="txtNuevaContrasena"
+                            id="txtNuevaContrasena"
+                            class="form-control grimorio-input"
+                            placeholder="Ingresa tu nueva contraseña"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="btn-ver-password"
+                            onclick="mostrarPassword('txtNuevaContrasena', this)"
+                            aria-label="Mostrar contraseña"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- CONFIRMAR CONTRASEÑA -->
+                <!-- ========================= -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="txtConfirmarContrasena"
+                        class="form-label grimorio-label"
+                    >
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Confirmar nueva contraseña
+
+                    </label>
+
+
+                    <div class="password-input">
+
+                        <input
+                            type="password"
+                            name="txtConfirmarContrasena"
+                            id="txtConfirmarContrasena"
+                            class="form-control grimorio-input"
+                            placeholder="Confirma tu nueva contraseña"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="btn-ver-password"
+                            onclick="mostrarPassword('txtConfirmarContrasena', this)"
+                            aria-label="Mostrar contraseña"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- RECOMENDACIÓN -->
+                <!-- ========================= -->
+
+                <div class="password-info">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <p>
+                        Utiliza una contraseña segura y diferente a la anterior.
+                    </p>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- BOTONES -->
+                <!-- ========================= -->
+
+                <div class="form-buttons">
+
+
+                    <!-- VOLVER -->
+
+                    <a
+                        href="{{ url_for('perfil.perfil') }}"
+                        class="btn-cancelar"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Cancelar
+
+                    </a>
+
+
+                    <!-- GUARDAR -->
+
+                    <button
+                        type="submit"
+                        class="btn-guardar"
+                    >
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Cambiar contraseña
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FRASE -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-frase">
+
+            <span>
+                ❝
+            </span>
+
+            <p>
+                La seguridad del Grimorio comienza con quien guarda sus secretos.
+            </p>
+
+            <span>
+                ❞
+            </span>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ========================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================= -->
+
+<script>
+
+    function mostrarPassword(idInput, boton) {
+
+        const input = document.getElementById(idInput);
+
+        const icono = boton.querySelector('i');
+
+
+        if (input.type === 'password') {
+
+            input.type = 'text';
+
+            icono.classList.remove('fa-eye');
+
+            icono.classList.add('fa-eye-slash');
+
+        } else {
+
+            input.type = 'password';
+
+            icono.classList.remove('fa-eye-slash');
+
+            icono.classList.add('fa-eye');
+
+        }
+
+    }
+
+</script>
+
+
+{% include 'components/footer_admin.html' %}

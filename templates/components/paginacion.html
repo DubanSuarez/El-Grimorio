@@ -1,0 +1,109 @@
+<!-- Paginación -->
+<nav class="paginacion-grimorio" aria-label="Paginación">
+    <ul class="pagination justify-content-center">
+
+        <li class="page-item" id="pagina-anterior">
+            <button class="page-link" type="button">
+                <iconify-icon icon="solar:alt-arrow-left-outline"></iconify-icon>
+            </button>
+        </li>
+
+        <div id="numeros-pagina" class="d-flex"></div>
+
+        <li class="page-item" id="pagina-siguiente">
+            <button class="page-link" type="button">
+                <iconify-icon icon="solar:alt-arrow-right-outline"></iconify-icon>
+            </button>
+        </li>
+
+    </ul>
+</nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const filas = document.querySelectorAll(".tabla-grimorio tbody tr");
+    const numerosPagina = document.getElementById("numeros-pagina");
+    const anterior = document.getElementById("pagina-anterior");
+    const siguiente = document.getElementById("pagina-siguiente");
+
+    const filasPorPagina = 10;
+    let paginaActual = 1;
+
+    const totalPaginas = Math.ceil(filas.length / filasPorPagina);
+
+    function mostrarPagina(pagina) {
+
+        paginaActual = pagina;
+
+        const inicio = (pagina - 1) * filasPorPagina;
+        const fin = inicio + filasPorPagina;
+
+        filas.forEach((fila, index) => {
+            if (index >= inicio && index < fin) {
+                fila.style.display = "";
+            } else {
+                fila.style.display = "none";
+            }
+        });
+
+        crearNumerosPagina();
+
+        anterior.classList.toggle("disabled", paginaActual === 1);
+        siguiente.classList.toggle("disabled", paginaActual === totalPaginas);
+    }
+
+    function crearNumerosPagina() {
+
+        numerosPagina.innerHTML = "";
+
+        for (let i = 1; i <= totalPaginas; i++) {
+
+            const li = document.createElement("li");
+            li.className = "page-item";
+
+            if (i === paginaActual) {
+                li.classList.add("active");
+            }
+
+            const button = document.createElement("button");
+
+            button.className = "page-link";
+            button.type = "button";
+            button.textContent = i;
+
+            button.addEventListener("click", function () {
+                mostrarPagina(i);
+            });
+
+            li.appendChild(button);
+            numerosPagina.appendChild(li);
+        }
+    }
+
+    anterior.addEventListener("click", function () {
+
+        if (paginaActual > 1) {
+            mostrarPagina(paginaActual - 1);
+        }
+
+    });
+
+    siguiente.addEventListener("click", function () {
+
+        if (paginaActual < totalPaginas) {
+            mostrarPagina(paginaActual + 1);
+        }
+
+    });
+
+    // Iniciar paginación
+    if (filas.length > 0) {
+        mostrarPagina(1);
+    } else {
+        anterior.classList.add("disabled");
+        siguiente.classList.add("disabled");
+    }
+
+});
+</script>

@@ -1,0 +1,186 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Agregar editorial</h1>
+
+            <p>
+                Registra una nueva editorial en El Grimorio
+            </p>
+
+        </div>
+
+
+        <form
+            action="/admin/editoriales/agregar"
+            method="POST"
+        >
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="form-section">
+
+                <h3>Información de la editorial</h3>
+
+
+                <div class="row g-4">
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="col-12">
+
+                        <label>Nombre de la editorial</label>
+
+                        <input
+                            type="text"
+                            name="txtNombre"
+                            class="form-control grimorio-input"
+                            placeholder="Ej. Editorial Planeta"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PAÍS -->
+
+                    <div class="col-md-6">
+
+                        <label>País</label>
+
+                        <input
+                            type="text"
+                            name="txtPais"
+                            class="form-control grimorio-input"
+                            placeholder="Ej. España"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CIUDAD -->
+
+                    <div class="col-md-6">
+
+                        <label>Ciudad</label>
+
+                        <input
+                            type="text"
+                            name="txtCiudad"
+                            class="form-control grimorio-input"
+                            placeholder="Ej. Madrid"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SITIO WEB -->
+
+                    <div class="col-12">
+
+                        <label>Sitio web</label>
+
+                        <input
+                            type="url"
+                            name="txtSitioWeb"
+                            class="form-control grimorio-input"
+                            placeholder="https://www.ejemplo.com"
+                        >
+
+                    </div>
+
+
+                    <!-- ESTADO -->
+
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select
+                            name="txtEstado"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="">
+                                Seleccione un estado
+                            </option>
+
+                            <option value="1">
+                                Activo
+                            </option>
+
+                            <option value="0">
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FECHA -->
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de registro</label>
+
+                        <input
+                            type="date"
+                            name="txtFechaRegistro"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+
+            <div class="form-actions">
+
+                <a
+                    href="/admin/editoriales"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
+
+                    <iconify-icon
+                        icon="solar:book-2-outline"
+                    ></iconify-icon>
+
+                    Guardar editorial
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

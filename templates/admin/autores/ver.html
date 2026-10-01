@@ -1,0 +1,142 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <!-- ENCABEZADO -->
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>{{ autor[1] }}</h1>
+
+            <p>
+                Información del autor almacenada en El Grimorio
+            </p>
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="form-section">
+
+            <h3>Información del autor</h3>
+
+            <div class="row g-4">
+
+
+                <!-- Nombre -->
+
+                <div class="col-md-6">
+
+                    <label>Nombre completo</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ autor[1] }}
+                    </div>
+
+                </div>
+
+
+                <!-- Nacionalidad -->
+
+                <div class="col-md-6">
+
+                    <label>Nacionalidad</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ autor[2] }}
+                    </div>
+
+                </div>
+
+
+                <!-- Fecha nacimiento -->
+
+                <div class="col-md-6">
+
+                    <label>Fecha de nacimiento</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ autor[3] }}
+                    </div>
+
+                </div>
+
+
+                <!-- Fecha fallecimiento -->
+
+                <div class="col-md-6">
+
+                    <label>Fecha de fallecimiento</label>
+
+                    <div class="form-control grimorio-input">
+
+                        {% if autor[4] %}
+                            {{ autor[4] }}
+                        {% else %}
+                            Actualmente vivo
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- Biografía -->
+
+                <div class="col-12">
+
+                    <label>Biografía</label>
+
+                    <div
+                        class="form-control grimorio-input"
+                        style="min-height: 150px;">
+
+                        {{ autor[5] }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="form-actions">
+
+            <a
+                href="/admin/autores"
+                class="btn-cancelar">
+
+                Volver
+
+            </a>
+
+
+            <a
+                href="/admin/autores/editar/{{ autor[0] }}"
+                class="btn-guardar">
+
+                <iconify-icon
+                    icon="solar:pen-outline">
+                </iconify-icon>
+
+                Editar autor
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

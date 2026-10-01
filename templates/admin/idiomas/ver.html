@@ -1,0 +1,124 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+    <div class="grimorio-form">
+        <div class="form-header">
+            <span class="form-icon">✦</span>
+            <h1>Información del idioma</h1>
+            <p>Consulta los datos registrados en El Grimorio</p>
+        </div>
+
+        <div class="form-section">
+            <h3>Datos del idioma</h3>
+            <div class="row g-4">
+                <!-- ID -->
+                    <input
+                        type="hidden"
+                        class="form-control grimorio-input"
+                        value="{{ idioma[0] }}"
+                        readonly
+                    >
+                <!-- Nombre -->
+                <div class="col-md-6">
+
+                    <label>Nombre del idioma</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ idioma[1] }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- Código ISO -->
+                <div class="col-md-6">
+
+                    <label>Código ISO</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ idioma[2] }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- Estado -->
+                <div class="col-md-6">
+
+                    <label>Estado</label>
+
+                    <div class="pt-2">
+
+                        {% if idioma[3] == '1' %}
+
+                        <span class="estado activo">
+                            Activo
+                        </span>
+
+                        {% else %}
+
+                        <span class="estado inactivo">
+                            Inactivo
+                        </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- Fecha -->
+                <div class="col-md-6">
+
+                    <label>Fecha de registro</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ idioma[4] }}"
+                        readonly
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+        <div class="form-actions">
+
+            <a
+                href="/admin/idiomas"
+                class="btn-cancelar"
+            >
+                Volver
+            </a>
+
+            <a
+                href="/admin/idiomas/editar/{{ idioma[0] }}"
+                class="btn-guardar"
+            >
+
+                <iconify-icon icon="solar:pen-outline"></iconify-icon>
+
+                Editar idioma
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

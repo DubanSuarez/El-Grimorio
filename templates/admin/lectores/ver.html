@@ -1,0 +1,162 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+    <div class="grimorio-form">
+        <div class="form-header">
+            <span class="form-icon">✦</span>
+            <h1>Información del lector</h1>
+            <p>Consulta los datos registrados en El Grimorio</p>
+        </div>
+
+        <!-- INFORMACIÓN PERSONAL -->
+        <div class="form-section">
+            <h3>Información personal</h3>
+            <div class="row g-4">
+                <!-- ID -->
+                    <input
+                        type="hidden"
+                        class="form-control grimorio-input"
+                        value="{{ lector[0] }}"
+                        readonly
+                    >
+
+                <!-- Tipo documento -->
+                <div class="col-md-6">
+                    <label>Tipo de documento</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[1] }}"
+                        readonly
+                    >
+                </div>
+
+
+                <!-- Número documento -->
+                <div class="col-md-6">
+                    <label>Número de documento</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[2] }}"
+                        readonly
+                    >
+                </div>
+
+                <!-- Nombre -->
+                <div class="col-md-6">
+                    <label>Nombre completo</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[3] }}"
+                        readonly
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="form-section">
+            <h3>Información de contacto</h3>
+            <div class="row g-4">
+                <!-- Teléfono -->
+                <div class="col-md-6">
+                    <label>Teléfono</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[4] or 'No registrado' }}"
+                        readonly
+                    >
+                </div>
+
+                <!-- Correo -->
+                <div class="col-md-6">
+                    <label>Correo electrónico</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[5] or 'No registrado' }}"
+                        readonly
+                    >
+                </div>
+
+                <!-- Dirección -->
+                <div class="col-12">
+                    <label>Dirección</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[6] or 'No registrada' }}"
+                        readonly
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- INFORMACIÓN DEL LECTOR -->
+        <div class="form-section">
+            <h3>Información del lector</h3>
+            <div class="row g-4">
+                <!-- Tipo -->
+                <div class="col-md-6">
+                    <label>Tipo de lector</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[7] }}"
+                        readonly
+                    >
+                </div>
+
+                <!-- Estado -->
+                <div class="col-md-6">
+                    <label>Estado</label>
+                    <div class="pt-2">
+                        {% if lector[8] == 'Activo' %}
+                        <span class="estado activo">
+                            Activo
+                        </span>
+                        {% else %}
+                        <span class="estado inactivo">
+                            Inactivo
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Fecha -->
+                <div class="col-md-6">
+                    <label>Fecha de registro</label>
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ lector[9] }}"
+                        readonly
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="form-actions">
+            <a
+                href="/admin/lectores"
+                class="btn-cancelar"
+            >
+                Volver
+            </a>
+            <a
+                href="/admin/lectores/editar/{{ lector[0] }}"
+                class="btn-guardar"
+            >
+                <iconify-icon icon="solar:pen-outline"></iconify-icon>
+                Editar lector
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% include 'components/footer_admin.html' %}

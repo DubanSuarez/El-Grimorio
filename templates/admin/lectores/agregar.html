@@ -1,0 +1,261 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Agregar lector</h1>
+
+            <p>Registra un nuevo lector en El Grimorio</p>
+
+        </div>
+
+
+        <form action="/admin/lectores/agregar" method="POST">
+
+            <!-- INFORMACIÓN PERSONAL -->
+            <div class="form-section">
+
+                <h3>Información personal</h3>
+
+                <div class="row g-4">
+
+                    <!-- Tipo documento -->
+                    <div class="col-md-6">
+
+                        <label>Tipo de documento</label>
+
+                        <select
+                            name="txtTipoDocumento"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="">
+                                Seleccione un tipo de documento
+                            </option>
+
+                            <option value="CC">
+                                Cédula de ciudadanía
+                            </option>
+
+                            <option value="TI">
+                                Tarjeta de identidad
+                            </option>
+
+                            <option value="CE">
+                                Cédula de extranjería
+                            </option>
+
+                            <option value="PAS">
+                                Pasaporte
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Número documento -->
+                    <div class="col-md-6">
+
+                        <label>Número de documento</label>
+
+                        <input
+                            type="text"
+                            name="txtNumeroDocumento"
+                            class="form-control grimorio-input"
+                            placeholder="Número de documento"
+                            maxlength="30"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Nombre -->
+                    <div class="col-12">
+
+                        <label>Nombre completo</label>
+
+                        <input
+                            type="text"
+                            name="txtNombreCompleto"
+                            class="form-control grimorio-input"
+                            placeholder="Nombre completo del lector"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DE CONTACTO -->
+            <div class="form-section">
+
+                <h3>Información de contacto</h3>
+
+                <div class="row g-4">
+
+                    <!-- Teléfono -->
+                    <div class="col-md-6">
+
+                        <label>Teléfono</label>
+
+                        <input
+                            type="text"
+                            name="txtTelefono"
+                            class="form-control grimorio-input"
+                            placeholder="Número de teléfono"
+                            maxlength="20"
+                        >
+
+                    </div>
+
+
+                    <!-- Correo -->
+                    <div class="col-md-6">
+
+                        <label>Correo electrónico</label>
+
+                        <input
+                            type="email"
+                            name="txtCorreo"
+                            class="form-control grimorio-input"
+                            placeholder="ejemplo@correo.com"
+                            maxlength="120"
+                        >
+
+                    </div>
+
+
+                    <!-- Dirección -->
+                    <div class="col-12">
+
+                        <label>Dirección</label>
+
+                        <input
+                            type="text"
+                            name="txtDireccion"
+                            class="form-control grimorio-input"
+                            placeholder="Dirección de residencia"
+                            maxlength="200"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DEL LECTOR -->
+            <div class="form-section">
+
+                <h3>Información del lector</h3>
+
+                <div class="row g-4">
+
+                    <!-- Tipo lector -->
+                    <div class="col-md-6">
+
+                        <label>Tipo de lector</label>
+
+                        <select
+                            name="txtTipoLector"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="">
+                                Seleccione un tipo
+                            </option>
+
+                            <option value="Estudiante">
+                                Estudiante
+                            </option>
+
+                            <option value="Docente">
+                                Docente
+                            </option>
+
+                            <option value="Administrativo">
+                                Administrativo
+                            </option>
+
+                            <option value="Externo">
+                                Externo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Estado -->
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select
+                            name="txtEstado"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="Activo">
+                                Activo
+                            </option>
+
+                            <option value="Inactivo">
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="form-actions">
+
+                <a
+                    href="/admin/lectores"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
+
+                    <iconify-icon icon="solar:user-plus-outline"></iconify-icon>
+
+                    Guardar lector
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

@@ -1,0 +1,194 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Editar editorial</h1>
+
+            <p>
+                Modifica la información de la editorial
+            </p>
+
+        </div>
+
+
+        <form
+            action="/admin/editoriales/editar/{{ editorial[0] }}"
+            method="POST"
+        >
+
+
+            <div class="form-section">
+
+                <h3>Información de la editorial</h3>
+
+
+                <div class="row g-4">
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="col-12">
+
+                        <label>Nombre de la editorial</label>
+
+                        <input
+                            type="text"
+                            name="txtNombre"
+                            class="form-control grimorio-input"
+                            value="{{ editorial[1] }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PAÍS -->
+
+                    <div class="col-md-6">
+
+                        <label>País</label>
+
+                        <input
+                            type="text"
+                            name="txtPais"
+                            class="form-control grimorio-input"
+                            value="{{ editorial[2] }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CIUDAD -->
+
+                    <div class="col-md-6">
+
+                        <label>Ciudad</label>
+
+                        <input
+                            type="text"
+                            name="txtCiudad"
+                            class="form-control grimorio-input"
+                            value="{{ editorial[3] }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SITIO WEB -->
+
+                    <div class="col-12">
+
+                        <label>Sitio web</label>
+
+                        <input
+                            type="url"
+                            name="txtSitioWeb"
+                            class="form-control grimorio-input"
+                            value="{{ editorial[4] }}"
+                        >
+
+                    </div>
+
+
+                    <!-- ESTADO -->
+
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select
+                            name="txtEstado"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="">
+                                Seleccione un estado
+                            </option>
+
+                            <option
+                                value="1"
+                                {% if editorial[5] == 1 or editorial[5] == '1' %}
+                                selected
+                                {% endif %}
+                            >
+                                Activo
+                            </option>
+
+                            <option
+                                value="0"
+                                {% if editorial[5] == 0 or editorial[5] == '0' %}
+                                selected
+                                {% endif %}
+                            >
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FECHA -->
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de registro</label>
+
+                        <input
+                            type="date"
+                            class="form-control grimorio-input"
+                            value="{{ editorial[6] }}"
+                            disabled
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+
+            <div class="form-actions">
+
+                <a
+                    href="/admin/editoriales"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
+
+                    <iconify-icon
+                        icon="solar:pen-outline"
+                    ></iconify-icon>
+
+                    Guardar cambios
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

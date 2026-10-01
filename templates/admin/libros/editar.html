@@ -1,0 +1,292 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+            <span class="form-icon">✦</span>
+            <h1>Editar libro</h1>
+            <p>Modifica los conocimientos almacenados en El Grimorio</p>
+        </div>
+
+        <form action="/admin/libros/editar/{{ libro[0] }}" method="POST" enctype="multipart/form-data">
+
+            <div class="form-section">
+
+                <h3>Información bibliográfica</h3>
+
+                <div class="row g-4">
+
+                    <!-- Autor -->
+                    <div class="col-md-6">
+                        <label>Autor</label>
+
+                        <select name="txtIdAutor" class="form-control grimorio-input" required>
+
+                            <option value="">Seleccione un autor</option>
+
+                            {% for autor in autores %}
+
+                            <option value="{{ autor[0] }}" {% if autor[0]==libro[1] %}selected{% endif %}>
+
+                                {{ autor[1] }}
+
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+
+                    <!-- Categoría -->
+                    <div class="col-md-6">
+
+                        <label>Categoría</label>
+
+                        <select name="txtIdCategoria" class="form-control grimorio-input" required>
+
+                            <option value="">Seleccione una categoría</option>
+
+                            {% for categoria in categorias %}
+
+                            <option value="{{ categoria[0] }}" {% if categoria[0]==libro[2] %}selected{% endif %}>
+
+                                {{ categoria[1] }}
+
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Editorial -->
+                    <div class="col-md-6">
+
+                        <label>Editorial</label>
+
+                        <select name="txtIdEditorial" class="form-control grimorio-input" required>
+
+                            <option value="">Seleccione una editorial</option>
+
+                            {% for editorial in editoriales %}
+
+                            <option value="{{ editorial[0] }}" {% if editorial[0]==libro[3] %}selected{% endif %}>
+
+                                {{ editorial[1] }}
+
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Idioma -->
+                    <div class="col-md-6">
+
+                        <label>Idioma</label>
+
+                        <select name="txtIdIdioma" class="form-control grimorio-input" required>
+
+                            <option value="">Seleccione un idioma</option>
+
+                            {% for idioma in idiomas %}
+
+                            <option value="{{ idioma[0] }}" {% if idioma[0]==libro[4] %}selected{% endif %}>
+
+                                {{ idioma[1] }}
+
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Nombre -->
+                    <div class="col-12">
+
+                        <label>Nombre del libro</label>
+
+                        <input type="text" name="txtNombre" class="form-control grimorio-input" value="{{ libro[5] }}"
+                            required>
+
+                    </div>
+
+
+                    <!-- Año -->
+                    <div class="col-md-6">
+
+                        <label>Año de publicación</label>
+
+                        <input type="number" name="txtAnioPublicacion" class="form-control grimorio-input"
+                            value="{{ libro[6] }}" required>
+
+                    </div>
+
+
+                    <!-- Páginas -->
+                    <div class="col-md-6">
+
+                        <label>Páginas</label>
+
+                        <input type="number" name="txtPaginas" class="form-control grimorio-input"
+                            value="{{ libro[7] }}" required>
+
+                    </div>
+
+
+                    <!-- Descripción -->
+                    <div class="col-12">
+
+                        <label>Descripción</label>
+
+                        <textarea name="txtDescripcion" class="form-control grimorio-input" rows="5"
+                            required>{{ libro[8] }}</textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Portada -->
+            <div class="form-section">
+
+                <h3>Portada y acceso</h3>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+
+                        <label>Imagen de portada</label>
+
+                        {% if libro[10] %}
+
+                        <div class="mb-3">
+                            <img src="{{ url_for('static', filename='img/libros/' + libro[10]) }}" alt="Portada actual"
+                                style="
+                                        width: 140px;
+                                        height: 190px;
+                                        object-fit: cover;
+                                        border-radius: 6px;
+                                        border: 1px solid #c9a45c;
+                                    ">
+                        </div>
+
+                        {% endif %}
+
+                        <input type="file" name="Imagen" class="form-control grimorio-input" accept="image/*">
+
+                        <small>
+                            Deja este campo vacío para conservar la imagen actual.
+                        </small>
+
+                    </div>
+
+
+                    <!-- URL -->
+                    <div class="col-md-6">
+
+                        <label>URL</label>
+
+                        <input type="url" name="txtUrl" class="form-control grimorio-input" value="{{ libro[11] }}"
+                            required>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Inventario -->
+            <div class="form-section">
+
+                <h3>Inventario</h3>
+
+                <div class="row g-4">
+
+                    <!-- Cantidad -->
+                    <div class="col-md-6">
+
+                        <label>Cantidad</label>
+
+                        <input type="number" name="txtCantidad" class="form-control grimorio-input"
+                            value="{{ libro[12] }}" min="1" required>
+
+                    </div>
+
+
+                    <!-- Disponibles -->
+                    <div class="col-md-6">
+
+                        <label>Disponibles</label>
+
+                        <input type="number" name="txtDisponibles" class="form-control grimorio-input"
+                            value="{{ libro[13] }}" min="0" required>
+
+                    </div>
+
+
+                    <!-- Estado -->
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select name="txtEstado" class="form-control grimorio-input" required>
+
+                            <option value="">Seleccione un estado</option>
+
+                            <option value="1" {% if libro[14]==1 or libro[14]=='1' %}selected{% endif %}>
+                                Activo
+                            </option>
+
+                            <option value="0" {% if libro[14]==0 or libro[14]=='0' %}selected{% endif %}>
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Botones -->
+            <div class="form-actions">
+
+                <a href="/admin/libros" class="btn-cancelar">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn-guardar">
+
+                    <iconify-icon icon="solar:pen-outline"></iconify-icon>
+
+                    Guardar cambios
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

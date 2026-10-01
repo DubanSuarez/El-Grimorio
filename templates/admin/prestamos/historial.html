@@ -1,0 +1,213 @@
+{% include 'components/cabecera_admin.html' %}
+
+<main class="libros-page">
+
+    <!-- ENCABEZADO -->
+
+    <div class="container">
+
+        <div class="libros-header">
+
+            <div>
+
+                <h1>Historial de préstamos</h1>
+
+                <p>
+                    Registro histórico de libros devueltos
+                </p>
+
+            </div>
+
+            <a
+                href="/admin/prestamos"
+                class="btn-nuevo-libro"
+            >
+
+                <iconify-icon icon="solar:arrow-left-outline"></iconify-icon>
+
+                Préstamos activos
+
+            </a>
+
+        </div>
+
+
+        <!-- BUSCADOR -->
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="input-group mb-3">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Buscar en el historial..."
+                    >
+
+                    <button
+                        class="btn btnBuscar"
+                        type="button"
+                    >
+
+                        <iconify-icon icon="pepicons-pencil:loop"></iconify-icon>
+
+                        Buscar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TABLA -->
+
+    <div class="container">
+
+        <div class="table-responsive">
+
+            <table class="table table-striped table-hover tabla-grimorio">
+
+                <thead>
+
+                    <tr>
+
+                        <th>#</th>
+
+                        <th>Libro</th>
+
+                        <th>Lector</th>
+
+                        <th>Fecha préstamo</th>
+
+                        <th>Devolución programada</th>
+
+                        <th>Devolución real</th>
+
+                        <th>Estado</th>
+
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody class="table-group-divider">
+
+                    {% for prestamo in prestamos %}
+
+                    <tr>
+
+                        <th scope="row">
+                            {{ prestamo[0] }}
+                        </th>
+
+
+                        <td>
+                            {{ prestamo[1] }}
+                        </td>
+
+
+                        <td>
+                            {{ prestamo[2] }}
+                        </td>
+
+
+                        <td>
+                            {{ prestamo[4] }}
+                        </td>
+
+
+                        <td>
+                            {{ prestamo[5] }}
+                        </td>
+
+
+                        <td>
+
+                            {% if prestamo[6] %}
+
+                                {{ prestamo[6] }}
+
+                            {% else %}
+
+                                <span class="text-muted">
+                                    —
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            {% if prestamo[7] == 'Devuelto' %}
+
+                                <span class="estado activo">
+                                    Devuelto
+                                </span>
+
+                            {% elif prestamo[7] == 'Vencido' %}
+
+                                <span class="estado inactivo">
+                                    Vencido
+                                </span>
+
+                            {% else %}
+
+                                <span class="estado activo">
+                                    Prestado
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            <!-- VER -->
+
+                            <a
+                                href="/admin/prestamos/ver/{{ prestamo[0] }}"
+                                class="btn btn-outline-info btnaccion"
+                                title="Ver préstamo"
+                            >
+
+                                <iconify-icon
+                                    icon="solar:eye-outline">
+                                </iconify-icon>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGINACIÓN --> 
+
+    {% include 'components/paginacion.html' %}
+
+</main>
+
+
+{% include 'components/footer_admin.html' %}

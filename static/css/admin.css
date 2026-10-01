@@ -1,0 +1,1061 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #111111 !important;
+    color: #ffffff;
+    font-family: "Cinzel", sans-serif;
+}
+
+
+/* Logo y Iconos */
+
+.contenedorLogo {
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    gap: 10px;
+}
+
+.Logo {
+    width: 35px;
+    height: 35px;
+}
+
+.TextoLogo {
+    font-family: "Cinzel", serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    color: #C9A45C !important;
+}
+
+/* Menú */
+
+.navbar-grimorio {
+    background-color: #000000;
+}
+
+
+.navbar-grimorio .nav-link,
+.navbar-grimorio .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    border: 2px solid #C9A45C !important;
+    border-radius: 6px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23C9A45C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+.navbar-grimorio .container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.contenedorLogo {
+    display: flex;
+    align-items: center;
+}
+
+/* Espacio central */
+.navbar-collapse {
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menú */
+.menu-central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 0 auto;
+}
+
+/* Botón derecho */
+.boton-derecha {
+    margin-left: auto;
+}
+
+
+
+.TextoMenu {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Lora, serif;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+
+
+/*Boton Inicio de Sesion*/
+
+.btn-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #C9A45C !important;
+    border: 1px solid #C9A45C !important;
+    background-color: transparent;
+}
+
+.btn-login iconify-icon {
+    color: #C9A45C;
+    font-size: 20px;
+}
+
+.btn-login:hover {
+    color: #C9A45C;
+    border-color: #C9A45C;
+    background-color: transparent;
+}
+
+.btn-login {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+}
+
+
+@media (max-width: 991.98px) {
+
+    .navbar-collapse {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu-central {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin: 0;
+        padding-left: 15px;
+    }
+
+    .boton-derecha {
+        margin-left: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+    }
+
+}
+
+
+.dropdown-grimorio {
+    background-color: #101010 !important;
+    border: 1px solid #C9A45C;
+    border-radius: 4px;
+    padding: 8px 0;
+}
+
+.dropdown-grimorio .dropdown-item {
+    color: #ffffff;
+    font-family: "Lora", serif;
+    font-size: 14px;
+    padding: 9px 18px;
+}
+
+.dropdown-grimorio .dropdown-item:hover {
+    color: #C9A45C;
+    background-color: #1c1c1c;
+}
+
+
+
+
+.btn-login {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+
+    color: #C9A45C !important;
+    border: 1px solid #C9A45C !important;
+    background-color: transparent;
+}
+
+.btn-login iconify-icon {
+    color: #C9A45C;
+    font-size: 20px;
+}
+
+.btn-login:hover {
+    color: #000000 !important;
+    background-color: #C9A45C;
+    border-color: #C9A45C;
+}
+
+.btn-login:hover iconify-icon {
+    color: #000000;
+}
+
+
+
+@media (max-width: 991.98px) {
+
+    .navbar-collapse {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu-central {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin: 0;
+        padding-left: 15px;
+    }
+
+    .boton-derecha {
+        margin-left: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+    }
+
+    .dropdown-grimorio {
+        width: 100%;
+        border: none;
+        border-left: 1px solid #C9A45C;
+        border-radius: 0;
+        margin-top: 5px;
+    }
+
+}
+
+
+
+
+
+
+/* =====================================================
+   FOOTER ADMINISTRATIVO
+===================================================== */
+
+.admin-footer {
+    width: 100%;
+    background-color: #101010;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   FOOTER PRINCIPAL
+===================================================== */
+
+.admin-footer-main {
+    border-top: 1px solid rgba(201, 164, 92, 0.15);
+    background-color: #151515;
+    padding: 20px 45px;
+}
+
+
+/* Contenedor */
+
+.admin-footer-container {
+    width: min(1100px, 90%);
+    min-height: 84px;
+
+    margin: 0 auto;
+    padding: 14px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =====================================================
+   MARCA
+===================================================== */
+
+.admin-footer-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Logo */
+
+.admin-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #C9A45C;
+    text-decoration: none;
+}
+
+
+/* Icono del logo */
+
+.admin-footer-logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+
+/* Nombre */
+
+.admin-footer-logo span {
+    color: #C9A45C;
+
+    font-family: "Cinzel", serif;
+    font-size: 22px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Texto */
+
+.admin-footer-brand p {
+    margin: 10px 0 0 50px;
+
+    color: #eeeeee;
+
+    font-family: "Lora", serif;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   ENLACES
+===================================================== */
+
+.admin-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.admin-footer-links a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #eeeeee;
+
+    text-decoration: none;
+
+    font-family: "Lora", serif;
+    font-size: 13px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Iconos */
+
+.admin-footer-links iconify-icon {
+    color: #ffffff;
+    font-size: 20px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Hover */
+
+.admin-footer-links a:hover {
+    color: #C9A45C;
+}
+
+.admin-footer-links a:hover iconify-icon {
+    color: #C9A45C;
+}
+
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.admin-footer-bottom {
+    width: 100%;
+    min-height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #000000;
+
+    border-top: 1px solid rgba(201, 164, 92, 0.08);
+}
+
+
+.admin-footer-bottom p {
+    margin: 0;
+
+    color: #dddddd;
+
+    font-family: "Lora", serif;
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+@media (max-width: 767.98px) {
+
+    .admin-footer-container {
+        width: 90%;
+        padding: 20px 0;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .admin-footer-brand {
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .admin-footer-brand p {
+        margin: 5px 0 0;
+    }
+
+
+    .admin-footer-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .admin-footer-links a {
+        font-size: 12px;
+    }
+
+
+    .admin-footer-bottom {
+        padding: 10px 15px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   Arregos Página
+===================================================== */
+
+
+
+
+/* =====================================================
+   DASHBOARD ADMINISTRATIVO
+===================================================== */
+
+.admin-dashboard {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 30px 0 50px;
+}
+
+
+/* =====================================================
+   BIENVENIDA
+===================================================== */
+
+.welcome-card {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 25px;
+
+    background-color: #294766;
+    border-radius: 7px;
+    margin-bottom: 30px;
+}
+
+
+.welcome-content h1 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-family: "Cinzel", serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+.welcome-content p {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Lora", serif;
+    font-size: 16px;
+}
+
+
+.welcome-date {
+    color: #ffffff;
+    font-family: "Lora", serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+}
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+
+.stats-grid {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+
+/* Bootstrap controla las columnas */
+.stats-grid .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.stats-grid .col-md-3 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.stat-card {
+    width: 100%;
+    min-height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+
+    background-color: #eeeeee;
+    border-radius: 4px;
+
+    color: #222222;
+    text-align: center;
+}
+
+
+/* =====================================================
+   ICONOS ESTADÍSTICAS
+===================================================== */
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 6px;
+
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.stat-icon iconify-icon {
+    font-size: 34px;
+}
+
+
+/* COLORES */
+
+.stat-books {
+    background-color: #294766;
+    color: #ffffff;
+}
+
+.stat-authors {
+    background-color: #6c2028;
+    color: #ffffff;
+}
+
+.stat-users {
+    background-color: #193a31;
+    color: #ffffff;
+}
+
+.stat-loans {
+    background-color: #d5a02d;
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   TEXTO ESTADÍSTICAS
+===================================================== */
+
+.stat-number {
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    line-height: 1.1;
+    color: #222222;
+}
+
+.stat-title,
+.stat-description {
+    font-family: "Lora", serif;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.stat-title {
+    margin-top: 2px;
+}
+
+.stat-description {
+    color: #333333;
+}
+
+
+/* =====================================================
+   ACCIONES RÁPIDAS
+===================================================== */
+
+.quick-actions {
+    margin-bottom: 55px;
+}
+
+.quick-actions h2 {
+    margin: 0 0 35px;
+
+    color: #C9A45C;
+
+    font-family: "Cinzel", serif;
+    font-size: 18px;
+    font-weight: 500;
+
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+
+.quick-actions-grid {
+    width: 100%;
+}
+
+
+/* Bootstrap controla las columnas */
+
+.quick-actions-grid .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.quick-actions-grid .col-md-3 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.quick-action {
+    width: 100%;
+    min-height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    padding: 7px 15px;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.quick-action:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.quick-action iconify-icon {
+    font-size: 23px;
+}
+
+
+/* COLORES */
+
+.action-loans {
+    background-color: #294766;
+}
+
+.action-books {
+    background-color: #6c2028;
+}
+
+.action-publishers {
+    background-color: #1d513f;
+}
+
+.action-authors {
+    background-color: #d5a02d;
+}
+
+
+/* =====================================================
+   INFORMACIÓN INFERIOR
+===================================================== */
+
+.dashboard-info-grid {
+    width: 100%;
+}
+
+.dashboard-info-grid > .row {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.dashboard-panel {
+    width: 100%;
+    padding: 15px 20px;
+    min-height: 170px;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   ACTIVIDAD
+===================================================== */
+
+.activity-panel {
+    background-color: #b0aa9e;
+    color: #222222;
+}
+
+.activity-panel h2,
+.popular-panel h2 {
+    margin: 0 0 20px;
+
+    font-family: "Cinzel", serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.activity-panel ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.activity-panel li {
+    margin-bottom: 12px;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.activity-panel li strong {
+    display: inline;
+}
+
+.activity-panel li span {
+    display: inline;
+}
+
+.activity-panel li small {
+    display: block;
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   LIBROS MÁS SOLICITADOS
+===================================================== */
+
+.popular-panel {
+    background-color: #3a2b22;
+    color: #ffffff;
+}
+
+.popular-panel h2 {
+    color: #ffffff;
+}
+
+.popular-panel ol {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.popular-panel li {
+    margin-bottom: 12px;
+    padding-left: 2px;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.popular-panel li strong {
+    display: block;
+}
+
+.popular-panel li span {
+    display: block;
+    margin-top: 2px;
+}
+
+.popular-panel li small {
+    display: block;
+    margin-top: 2px;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .admin-dashboard {
+        width: 90%;
+    }
+
+    /* Bootstrap seguirá manejando las columnas */
+    .stats-grid .col-md-3,
+    .quick-actions-grid .col-md-3 {
+        width: 50%;
+    }
+
+    .dashboard-info-grid .col-md-6 {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .admin-dashboard {
+        width: 92%;
+        padding: 20px 0 35px;
+    }
+
+
+    /* =================================================
+       BIENVENIDA
+    ================================================= */
+
+    .welcome-card {
+        min-height: auto;
+
+        padding: 16px;
+
+        align-items: flex-start;
+        gap: 12px;
+
+        margin-bottom: 25px;
+    }
+
+    .welcome-content {
+        min-width: 0;
+    }
+
+    .welcome-content h1 {
+        margin-bottom: 6px;
+        font-size: 17px;
+    }
+
+    .welcome-content p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .welcome-date {
+        flex-shrink: 0;
+
+        font-size: 8px;
+        margin-top: 2px;
+
+        white-space: nowrap;
+    }
+
+
+    /* =================================================
+       ESTADÍSTICAS
+    ================================================= */
+
+    .stats-grid {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .stats-grid .row {
+        row-gap: 10px;
+    }
+
+    .stats-grid .col-md-3 {
+        width: 50%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .stat-card {
+        min-height: 135px;
+        padding: 10px 6px;
+    }
+
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 6px;
+    }
+
+    .stat-icon iconify-icon {
+        font-size: 30px;
+    }
+
+    .stat-number {
+        font-size: 18px;
+    }
+
+    .stat-title,
+    .stat-description {
+        font-size: 13px;
+    }
+
+
+    /* =================================================
+       ACCIONES RÁPIDAS
+    ================================================= */
+
+    .quick-actions {
+        margin-bottom: 40px;
+    }
+
+    .quick-actions h2 {
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+
+    .quick-actions-grid .row {
+        row-gap: 10px;
+    }
+
+    .quick-actions-grid .col-md-3 {
+        width: 50%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .quick-action {
+        min-height: 38px;
+
+        gap: 6px;
+        padding: 7px 5px;
+
+        font-size: 13px;
+    }
+
+    .quick-action iconify-icon {
+        font-size: 19px;
+    }
+
+
+    /* =================================================
+       PANELES
+    ================================================= */
+
+    .dashboard-info-grid .row {
+        row-gap: 12px;
+    }
+
+    .dashboard-info-grid .col-md-6 {
+        width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .dashboard-panel {
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .activity-panel h2,
+    .popular-panel h2 {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .activity-panel li,
+    .popular-panel li {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .activity-panel li small,
+    .popular-panel li small {
+        font-size: 11px;
+    }
+
+}
+

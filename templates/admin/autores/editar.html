@@ -1,0 +1,155 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+            <span class="form-icon">✦</span>
+
+            <h1>Editar autor</h1>
+
+            <p>
+                Modifica la información almacenada en El Grimorio
+            </p>
+        </div>
+
+
+        <form
+            action="/admin/autores/editar/{{ autor[0] }}"
+            method="POST">
+
+
+            <!-- INFORMACIÓN DEL AUTOR -->
+
+            <div class="form-section">
+
+                <h3>Información del autor</h3>
+
+                <div class="row g-4">
+
+
+                    <!-- Nombre -->
+
+                    <div class="col-12">
+
+                        <label>Nombre completo</label>
+
+                        <input
+                            type="text"
+                            name="txtNombre"
+                            class="form-control grimorio-input"
+                            value="{{ autor[1] }}"
+                            placeholder="Nombre del autor"
+                            required>
+
+                    </div>
+
+
+                    <!-- Nacionalidad -->
+
+                    <div class="col-md-6">
+
+                        <label>Nacionalidad</label>
+
+                        <input
+                            type="text"
+                            name="txtNacionalidad"
+                            class="form-control grimorio-input"
+                            value="{{ autor[2] }}"
+                            placeholder="Ej. Colombiana"
+                            required>
+
+                    </div>
+
+
+                    <!-- Fecha nacimiento -->
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de nacimiento</label>
+
+                        <input
+                            type="date"
+                            name="txtFechaNacimiento"
+                            class="form-control grimorio-input"
+                            value="{{ autor[3] }}"
+                            required>
+
+                    </div>
+
+
+                    <!-- Fecha fallecimiento -->
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de fallecimiento</label>
+
+                        <input
+                            type="date"
+                            name="txtFechaFallecimiento"
+                            class="form-control grimorio-input"
+                            value="{{ autor[4] or '' }}">
+
+                        <small>
+                            Deja este campo vacío si el autor está vivo.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Biografía -->
+
+                    <div class="col-12">
+
+                        <label>Biografía</label>
+
+                        <textarea
+                            name="txtBiografia"
+                            class="form-control grimorio-input"
+                            rows="6"
+                            placeholder="Escribe una breve biografía..."
+                            required>{{ autor[5] }}</textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+
+            <div class="form-actions">
+
+                <a
+                    href="/admin/autores"
+                    class="btn-cancelar">
+
+                    Cancelar
+
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="btn-guardar">
+
+                    <iconify-icon
+                        icon="solar:pen-outline">
+                    </iconify-icon>
+
+                    Guardar cambios
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

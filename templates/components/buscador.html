@@ -1,0 +1,20 @@
+<form method="GET" action="{{ action }}">
+
+    <div class="input-group mb-3">
+
+        <input
+            type="text"
+            name="{{ parametro }}"
+            class="form-control"
+            placeholder="{{ placeholder }}"
+            value="{{ request.args.get(parametro, '') }}"
+        >
+
+        <button class="btn btnBuscar" type="submit">
+            <iconify-icon icon="pepicons-pencil:loop"></iconify-icon>
+            Buscar
+        </button>
+
+    </div>
+
+</form>

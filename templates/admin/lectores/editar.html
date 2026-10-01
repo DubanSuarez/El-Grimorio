@@ -1,0 +1,266 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Editar lector</h1>
+
+            <p>Modifica la información almacenada en El Grimorio</p>
+
+        </div>
+
+
+        <form
+            action="/admin/lectores/editar/{{ lector[0] }}"
+            method="POST"
+        >
+
+            <!-- INFORMACIÓN PERSONAL -->
+            <div class="form-section">
+
+                <h3>Información personal</h3>
+
+                <div class="row g-4">
+
+                    <!-- Tipo documento -->
+                    <div class="col-md-6">
+
+                        <label>Tipo de documento</label>
+
+                        <select
+                            name="txtTipoDocumento"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="CC"
+                                {% if lector[1] == 'CC' %}selected{% endif %}>
+                                Cédula de ciudadanía
+                            </option>
+
+                            <option value="TI"
+                                {% if lector[1] == 'TI' %}selected{% endif %}>
+                                Tarjeta de identidad
+                            </option>
+
+                            <option value="CE"
+                                {% if lector[1] == 'CE' %}selected{% endif %}>
+                                Cédula de extranjería
+                            </option>
+
+                            <option value="PAS"
+                                {% if lector[1] == 'PAS' %}selected{% endif %}>
+                                Pasaporte
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Número documento -->
+                    <div class="col-md-6">
+
+                        <label>Número de documento</label>
+
+                        <input
+                            type="text"
+                            name="txtNumeroDocumento"
+                            class="form-control grimorio-input"
+                            value="{{ lector[2] }}"
+                            maxlength="30"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Nombre -->
+                    <div class="col-12">
+
+                        <label>Nombre completo</label>
+
+                        <input
+                            type="text"
+                            name="txtNombreCompleto"
+                            class="form-control grimorio-input"
+                            value="{{ lector[3] }}"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACTO -->
+            <div class="form-section">
+
+                <h3>Información de contacto</h3>
+
+                <div class="row g-4">
+
+                    <!-- Teléfono -->
+                    <div class="col-md-6">
+
+                        <label>Teléfono</label>
+
+                        <input
+                            type="text"
+                            name="txtTelefono"
+                            class="form-control grimorio-input"
+                            value="{{ lector[4] or '' }}"
+                            maxlength="20"
+                        >
+
+                    </div>
+
+
+                    <!-- Correo -->
+                    <div class="col-md-6">
+
+                        <label>Correo electrónico</label>
+
+                        <input
+                            type="email"
+                            name="txtCorreo"
+                            class="form-control grimorio-input"
+                            value="{{ lector[5] or '' }}"
+                            maxlength="120"
+                        >
+
+                    </div>
+
+
+                    <!-- Dirección -->
+                    <div class="col-12">
+
+                        <label>Dirección</label>
+
+                        <input
+                            type="text"
+                            name="txtDireccion"
+                            class="form-control grimorio-input"
+                            value="{{ lector[6] or '' }}"
+                            maxlength="200"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMACIÓN DEL LECTOR -->
+            <div class="form-section">
+
+                <h3>Información del lector</h3>
+
+                <div class="row g-4">
+
+                    <!-- Tipo lector -->
+                    <div class="col-md-6">
+
+                        <label>Tipo de lector</label>
+
+                        <select
+                            name="txtTipoLector"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="Estudiante"
+                                {% if lector[7] == 'Estudiante' %}selected{% endif %}>
+                                Estudiante
+                            </option>
+
+                            <option value="Docente"
+                                {% if lector[7] == 'Docente' %}selected{% endif %}>
+                                Docente
+                            </option>
+
+                            <option value="Administrativo"
+                                {% if lector[7] == 'Administrativo' %}selected{% endif %}>
+                                Administrativo
+                            </option>
+
+                            <option value="Externo"
+                                {% if lector[7] == 'Externo' %}selected{% endif %}>
+                                Externo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Estado -->
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select
+                            name="txtEstado"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="Activo"
+                                {% if lector[8] == 'Activo' %}selected{% endif %}>
+                                Activo
+                            </option>
+
+                            <option value="Inactivo"
+                                {% if lector[8] == 'Inactivo' %}selected{% endif %}>
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="form-actions">
+
+                <a
+                    href="/admin/lectores"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
+
+                    <iconify-icon icon="solar:pen-outline"></iconify-icon>
+
+                    Guardar cambios
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

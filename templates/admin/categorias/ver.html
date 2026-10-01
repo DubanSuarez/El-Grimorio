@@ -1,0 +1,148 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+
+        <!-- ENCABEZADO -->
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>{{ categoria[1] }}</h1>
+
+            <p>
+                Información de la categoría almacenada en El Grimorio
+            </p>
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="form-section">
+
+            <h3>Información de la categoría</h3>
+
+            <div class="row g-4">
+
+
+                <!-- NOMBRE -->
+
+                <div class="col-md-6">
+
+                    <label>
+                        Nombre
+                    </label>
+
+                    <div class="form-control grimorio-input">
+                        {{ categoria[1] }}
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADO -->
+
+                <div class="col-md-6">
+
+                    <label>
+                        Estado
+                    </label>
+
+                    <div class="form-control grimorio-input">
+
+                        {% if categoria[3] == 1 %}
+
+                            <span class="estado activo">
+                                Activo
+                            </span>
+
+                        {% else %}
+
+                            <span class="estado inactivo">
+                                Inactivo
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPCIÓN -->
+
+                <div class="col-12">
+
+                    <label>
+                        Descripción
+                    </label>
+
+                    <div
+                        class="form-control grimorio-input"
+                        style="min-height: 120px;">
+
+                        {{ categoria[2] }}
+
+                    </div>
+
+                </div>
+
+
+                <!-- FECHA -->
+
+                <div class="col-md-6">
+
+                    <label>
+                        Fecha de registro
+                    </label>
+
+                    <div class="form-control grimorio-input">
+
+                        {{ categoria[4] }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="form-actions">
+
+            <a
+                href="/admin/categorias"
+                class="btn-cancelar">
+
+                Volver
+
+            </a>
+
+
+            <a
+                href="/admin/categorias/editar/{{ categoria[0] }}"
+                class="btn-guardar">
+
+                <iconify-icon
+                    icon="solar:pen-outline">
+                </iconify-icon>
+
+                Editar categoría
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

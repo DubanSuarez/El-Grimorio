@@ -1,0 +1,433 @@
+{% include 'components/cabecera.html' %}
+
+
+
+
+<!-- ================= HERO ================= -->
+
+<main>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1> EL GRIMORIO</h1>
+            <div class="hr">
+                <br>
+            </div>
+            <p>
+                Explora una colección de libros, autores y
+                conocimientos en una biblioteca inspirada en los
+                antiguos grimorios.
+            </p>
+            <a href="catalogo.html" class="catalog-button">
+                <span> Explorar catálogo </span>
+                <img class="flechabotones" src="../../static/img/Botones.png" alt="">
+            </a>
+        </div>
+    </section>
+</main>
+
+
+<!-- ================= Mesa del Bibliotecario ================= -->
+<section class="mesa-bibliotecario">
+
+    <div class="mesa-contenido">
+
+        <h1>LA MESA DEL BIBLIOTECARIO</h1>
+
+        <p class="subtitulo">
+            ¿Qué deseas explorar hoy?
+        </p>
+
+        <div class="ornamento">
+            <span></span>
+            <i class="fa-solid fa-diamond"></i>
+            <span></span>
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="opciones-biblioteca">
+
+            <!-- Catálogo -->
+            <a href="/libros" class="opcion-biblioteca">
+                <div class="icono-opcion">
+                    <iconify-icon icon="solar:book-2-bold"></iconify-icon>
+                </div>
+
+                <span>Catálogo</span>
+            </a>
+
+            <!-- Segunda opción -->
+            <a href="#" class="opcion-biblioteca">
+                <div class="icono-opcion">
+                    <iconify-icon icon="solar:pen-new-square-bold"></iconify-icon>
+                </div>
+
+                <span>Catálogo</span>
+            </a>
+
+            <!-- Préstamos -->
+            <a href="#" class="opcion-biblioteca">
+                <div class="icono-opcion">
+                    <iconify-icon icon="solar:key-bold"></iconify-icon>
+                </div>
+
+                <span>Préstamos</span>
+            </a>
+
+            <!-- Categorías -->
+            <a href="#" class="opcion-biblioteca">
+                <div class="icono-opcion">
+                    <iconify-icon icon="solar:scroll-bold"></iconify-icon>
+                </div>
+
+                <span>Categorías</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ================= Las Estanterías ================= -->
+<section class="estanterias">
+
+    <div class="estanterias-contenido">
+
+        <!-- TÍTULO -->
+        <h2>LAS ESTANTERÍAS</h2>
+
+        <p class="descripcion-estanterias">
+            Descubre una selección de historias que esperan ser exploradas.
+        </p>
+
+        <!-- CARRUSEL -->
+        <div class="carrusel-libros">
+
+            <!-- FLECHA IZQUIERDA -->
+            <button class="flecha-carrusel flecha-izquierda" aria-label="Libros anteriores">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+
+            <!-- LIBRO 1 -->
+            <article class="tarjeta-libro">
+
+                <div class="portada-libro">
+                    <img src="../../static/img/ElHobbit.jpg" alt="Portada de El Hobbit">
+                </div>
+
+                <div class="informacion-libro">
+
+                    <h3>El Hobbit</h3>
+
+                    <p class="autor-libro">
+                        J. R. R. Tolkien
+                    </p>
+
+                    <p class="genero-libro">
+                        Fantasía
+                    </p>
+
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <a href="#" class="btn-detalles">
+                        Ver detalles
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- LIBRO 2 -->
+            <article class="tarjeta-libro">
+
+                <div class="portada-libro">
+                    <img src="../../static/img/HarryPotter.jpg" alt="Portada de Harry Potter y la piedra filosofal">
+                </div>
+
+                <div class="informacion-libro">
+
+                    <h3>Harry Potter y la piedra filosofal</h3>
+
+                    <p class="autor-libro">
+                        J. K. Rowling
+                    </p>
+
+                    <p class="genero-libro">
+                        Fantasía
+                    </p>
+
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <a href="#" class="btn-detalles">
+                        Ver detalles
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- LIBRO 3 -->
+            <article class="tarjeta-libro">
+
+                <div class="portada-libro">
+                    <img src="../../static/img/Juegosdetronos.jpg" alt="Portada de Juego de tronos">
+                </div>
+
+                <div class="informacion-libro">
+
+                    <h3>Juego de tronos</h3>
+
+                    <p class="autor-libro">
+                        George R. R. Martin
+                    </p>
+
+                    <p class="genero-libro">
+                        Fantasía épica
+                    </p>
+
+                    <div class="estrellas">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <a href="#" class="btn-detalles">
+                        Ver detalles
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- FLECHA DERECHA -->
+            <button class="flecha-carrusel flecha-derecha" aria-label="Siguientes libros">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =====================================================
+     NOVEDADES DEL GRIMORIO
+     ===================================================== -->
+
+<section class="novedades-grimorio">
+
+    <div class="container">
+
+        <!-- ENCABEZADO -->
+        <div class="novedades-contenido">
+
+            <h2>NOVEDADES DEL GRIMORIO</h2>
+
+            <p class="novedades-descripcion">
+                Mantente al día con las últimas incorporaciones,
+                recomendaciones y actividades de nuestra biblioteca.
+            </p>
+
+            <div class="ornamento-novedades">
+                <span></span>
+                <i class="fa-solid fa-diamond"></i>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- TARJETAS -->
+        <div class="row novedades-grid justify-content-center">
+
+            <!-- Novedad 1 -->
+            <div class="col-12 col-md-6 novedades-col">
+
+                <article class="novedad-card">
+
+                    <div class="novedad-imagen">
+                        <img src="../../static/img/NOVEDAD1.png"
+                             alt="La Biblioteca de la Medianoche">
+                    </div>
+
+                    <div class="novedad-info">
+
+                        <h3>La Biblioteca de la Medianoche</h3>
+
+                        <p>
+                            Una novela contemporánea que invita
+                            a reflexionar sobre las decisiones,
+                            las oportunidades y los caminos
+                            que elegimos en la vida.
+                        </p>
+
+                        <a href="#" class="btn-novedad">
+                            Descubrir libro
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Novedad 2 -->
+            <div class="col-12 col-md-6 novedades-col">
+
+                <article class="novedad-card">
+
+                    <div class="novedad-imagen">
+                        <img src="../../static/img/NOVEDAD2.png"
+                             alt="El Nombre del Viento">
+                    </div>
+
+                    <div class="novedad-info">
+
+                        <h3>El Nombre del Viento</h3>
+
+                        <p>
+                            Una historia fantástica llena
+                            de misterio, magia y aventuras,
+                            ideal para quienes disfrutan
+                            de relatos épicos.
+                        </p>
+
+                        <a href="#" class="btn-novedad">
+                            Leer recomendación
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Novedad 3 -->
+            <div class="col-12 col-md-6 novedades-col">
+
+                <article class="novedad-card">
+
+                    <div class="novedad-imagen">
+                        <img src="../../static/img/NOVEDAD3.png"
+                             alt="Cien años de soledad">
+                    </div>
+
+                    <div class="novedad-info">
+
+                        <h3>Cien años de soledad</h3>
+
+                        <p>
+                            Una de las obras más importantes
+                            de nuestra biblioteca y un referente
+                            de la literatura latinoamericana.
+                        </p>
+
+                        <a href="#" class="btn-novedad">
+                            Ver detalles
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Novedad 4 -->
+            <div class="col-12 col-md-6 novedades-col">
+
+                <article class="novedad-card">
+
+                    <div class="novedad-imagen">
+                        <img src="../../static/img/NOVEDAD4.png"
+                             alt="Club de lectura mensual">
+                    </div>
+
+                    <div class="novedad-info">
+
+                        <h3>Club de lectura mensual</h3>
+
+                        <p>
+                            Acompáñanos a conversar sobre grandes
+                            historias, compartir ideas y descubrir
+                            nuevas perspectivas junto a otros lectores.
+                        </p>
+
+                        <a href="#" class="btn-novedad">
+                            Más información
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EL CONOCIMIENTO TE ESPERA
+     ===================================================== -->
+
+<section class="conocimiento">
+
+    <div class="conocimiento-contenido">
+
+        <h2>EL CONOCIMIENTO TE ESPERA</h2>
+
+        <p>
+            Cada libro es una puerta hacia nuevas ideas,
+            aventuras y descubrimientos.
+        </p>
+
+        <a href="/libros" class="btn-explorar">
+            Explorar catálogo
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+{% include 'components/footer.html' %}

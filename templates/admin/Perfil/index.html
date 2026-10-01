@@ -1,0 +1,308 @@
+{% include 'components/cabecera_admin.html' %}
+
+
+<main class="perfil-page">
+
+    <!-- ========================= -->
+    <!-- ENCABEZADO -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-title">
+
+            <span class="perfil-ornamento">
+                ✦
+            </span>
+
+            <h1>
+                Mi Perfil
+            </h1>
+
+            <p>
+                Información y configuración de tu cuenta en El Grimorio
+            </p>
+
+            <div class="linea-dorada"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- PERFIL -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-card">
+
+
+            <!-- ========================= -->
+            <!-- CABECERA DEL PERFIL -->
+            <!-- ========================= -->
+
+            <div class="perfil-card-header">
+
+                <div class="perfil-emblema">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="perfil-identidad">
+
+                    <span class="perfil-label">
+                        Guardián del Grimorio
+                    </span>
+
+                    <h2>
+                        {{ perfil[4] }}
+                    </h2>
+
+                    <p>
+                        @{{ perfil[3] }}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- DIVISOR -->
+            <!-- ========================= -->
+
+            <div class="divisor-grimorio">
+
+                <span>
+                    ✦
+                </span>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- INFORMACIÓN PERSONAL -->
+            <!-- ========================= -->
+
+            <div class="perfil-content">
+
+                <h3>
+
+                    <i class="fa-solid fa-scroll"></i>
+
+                    Información del usuario
+
+                </h3>
+
+
+                <div class="perfil-grid">
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="perfil-dato">
+
+                        <span>
+                            Nombre completo
+                        </span>
+
+                        <strong>
+                            {{ perfil[4] }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- USUARIO -->
+
+                    <div class="perfil-dato">
+
+                        <span>
+                            Nombre de usuario
+                        </span>
+
+                        <strong>
+                            {{ perfil[3] }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- CORREO -->
+
+                    <div class="perfil-dato">
+
+                        <span>
+                            Correo electrónico
+                        </span>
+
+                        <strong>
+                            {{ perfil[5] }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- IDENTIFICADOR -->
+
+                    <div class="perfil-dato">
+
+                        <span>
+                            Identificador
+                        </span>
+
+                        <strong>
+                            #{{ perfil[0] }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- ESTADO DE LA CUENTA -->
+                <!-- ========================= -->
+
+                <h3 class="cuenta-title">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    Estado de la cuenta
+
+                </h3>
+
+
+                <div class="cuenta-info">
+
+
+                    <!-- ROL -->
+
+                    <div class="cuenta-dato">
+
+                        <span>
+                            Rol
+                        </span>
+
+                        <strong>
+                            {{ perfil[2] }}
+                        </strong>
+
+                    </div>
+
+
+                    <!-- ESTADO -->
+
+                    <div class="cuenta-dato">
+
+                        <span>
+                            Estado
+                        </span>
+
+                        <strong class="estado {% if perfil[6] == 'Activo' %}activo{% else %}inactivo{% endif %}">
+
+                            <i class="fa-solid fa-circle"></i>
+
+                            {{ perfil[6] }}
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- PIE DE PERFIL -->
+            <!-- ========================= -->
+
+            <div class="perfil-footer">
+
+
+                <!-- ========================= -->
+                <!-- CONFIGURACIÓN -->
+                <!-- ========================= -->
+
+                <div class="perfil-acciones">
+
+                    <a href="{{ url_for('perfil.editar') }}" class="btn-editar-perfil">
+
+                        <i class="fa-solid fa-user-pen"></i>
+
+                        Editar perfil
+
+                    </a>
+
+
+                    <a href="{{ url_for('perfil.cambiar_password') }}" class="btn-cambiar-password">
+
+                        <i class="fa-solid fa-key"></i>
+
+                        Cambiar contraseña
+
+                    </a>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- NAVEGACIÓN -->
+                <!-- ========================= -->
+
+                <div class="perfil-navegacion">
+
+                    <a href="/admin/dashboard" class="btn-cancelar">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Volver
+
+                    </a>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FRASE -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-frase">
+
+            <span>
+                ❝
+            </span>
+
+            <p>
+                El conocimiento que custodiamos hoy
+                se convierte en la historia del Grimorio mañana.
+            </p>
+
+            <span>
+                ❞
+            </span>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+{% include 'components/footer_admin.html' %}

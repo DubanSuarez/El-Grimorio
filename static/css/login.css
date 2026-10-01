@@ -1,0 +1,752 @@
+/* =========================================================
+   EL GRIMORIO
+   LOGIN
+========================================================= */
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --grimorio-black: #080808;
+
+    --grimorio-dark: #101010;
+
+    --grimorio-panel: #141414;
+
+    --grimorio-gold: #C9A45C;
+
+    --grimorio-gold-light: #dfc27f;
+
+    --grimorio-border: rgba(201, 164, 92, 0.30);
+
+    --grimorio-text: #eee8dc;
+
+    --grimorio-muted: #a9a39a;
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: 'Lora', serif;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1b1a17 0%,
+            #0d0d0c 45%,
+            #050505 100%
+        );
+
+    color: var(--grimorio-text);
+
+}
+
+
+/* =========================
+   PÁGINA
+========================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+}
+
+
+/* =========================
+   BRILLO CENTRAL
+========================= */
+
+.login-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+
+    height: 550px;
+
+    border-radius: 50%;
+
+    background: rgba(201, 164, 92, 0.035);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   SÍMBOLOS DECORATIVOS
+========================= */
+
+.magic-symbol {
+
+    position: absolute;
+
+    color: var(--grimorio-gold);
+
+    opacity: 0.25;
+
+    font-family: 'Cinzel', serif;
+
+    pointer-events: none;
+
+}
+
+
+.symbol-one {
+
+    top: 12%;
+
+    left: 15%;
+
+    font-size: 28px;
+
+}
+
+
+.symbol-two {
+
+    bottom: 18%;
+
+    right: 17%;
+
+    font-size: 22px;
+
+}
+
+
+.symbol-three {
+
+    top: 28%;
+
+    right: 12%;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 42px 42px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24, 23, 21, 0.98),
+            rgba(12, 12, 12, 0.98)
+        );
+
+    border: 1px solid var(--grimorio-border);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        inset 0 0 35px rgba(201, 164, 92, 0.025);
+
+}
+
+
+/* =========================
+   BORDE INTERIOR
+========================= */
+
+.login-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(201, 164, 92, 0.10);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.login-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+.login-logo img {
+
+    width: 82px;
+
+    height: 82px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(201, 164, 92, 0.20)
+        );
+
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.login-header {
+
+    text-align: center;
+
+}
+
+
+.login-ornament {
+
+    color: var(--grimorio-gold);
+
+    font-size: 17px;
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+.login-header h1 {
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: var(--grimorio-gold);
+
+}
+
+
+.login-header p {
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: var(--grimorio-muted);
+
+    letter-spacing: 0.4px;
+
+}
+
+
+/* =========================
+   DIVISOR
+========================= */
+
+.login-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0 28px;
+
+}
+
+
+.login-divider span {
+
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(201, 164, 92, 0.45)
+        );
+
+}
+
+
+.login-divider span:last-child {
+
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            rgba(201, 164, 92, 0.45)
+        );
+
+}
+
+
+.login-divider i {
+
+    color: var(--grimorio-gold);
+
+    font-style: normal;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.login-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 21px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.form-group label {
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 13px;
+
+    color: var(--grimorio-gold-light);
+
+    letter-spacing: 0.6px;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.input-wrapper iconify-icon {
+
+    position: absolute;
+
+    left: 15px;
+
+    color: var(--grimorio-gold);
+
+    font-size: 19px;
+
+    z-index: 2;
+
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 15px 0 45px;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    border: 1px solid rgba(201, 164, 92, 0.25);
+
+    color: var(--grimorio-text);
+
+    font-family: 'Lora', serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #77736c;
+
+}
+
+
+.input-wrapper input:focus {
+
+    border-color: var(--grimorio-gold);
+
+    box-shadow:
+        0 0 0 2px rgba(201, 164, 92, 0.07),
+        0 0 18px rgba(201, 164, 92, 0.06);
+
+}
+
+
+.input-wrapper:focus-within iconify-icon {
+
+    color: var(--grimorio-gold-light);
+
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.login-button {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid var(--grimorio-gold);
+
+    background: transparent;
+
+    color: var(--grimorio-gold);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.login-button iconify-icon {
+
+    font-size: 18px;
+
+}
+
+
+.login-button:hover {
+
+    background: var(--grimorio-gold);
+
+    color: #101010;
+
+    box-shadow:
+        0 0 25px rgba(201, 164, 92, 0.18);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================
+   MENSAJES
+========================= */
+
+.login-messages {
+
+    margin-top: 20px;
+
+}
+
+
+.login-alert {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 13px;
+
+    font-family: 'Lora', serif;
+
+    font-size: 12px;
+
+    border: 1px solid;
+
+}
+
+
+.login-alert iconify-icon {
+
+    font-size: 17px;
+
+}
+
+
+.alert-danger {
+
+    color: #d99a9a;
+
+    background: rgba(120, 30, 30, 0.12);
+
+    border-color: rgba(180, 70, 70, 0.35);
+
+}
+
+
+.alert-warning {
+
+    color: #d8bd7d;
+
+    background: rgba(130, 100, 30, 0.10);
+
+    border-color: rgba(201, 164, 92, 0.30);
+
+}
+
+
+.alert-success {
+
+    color: #a9c8a5;
+
+    background: rgba(50, 100, 50, 0.10);
+
+    border-color: rgba(100, 150, 100, 0.30);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.login-footer {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.login-footer span {
+
+    color: var(--grimorio-gold);
+
+    font-size: 9px;
+
+}
+
+
+.login-footer p {
+
+    color: #77736c;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 500px) {
+
+    .login-page {
+
+        padding: 20px;
+
+    }
+
+
+    .login-container {
+
+        padding: 35px 25px 25px;
+
+    }
+
+
+    .login-header h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    .magic-symbol {
+
+        display: none;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   BOTONES DEL LOGIN
+========================================== */
+
+.login-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Botón general */
+
+.login-button {
+    flex: 1;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 1px solid #c9a45c;
+    border-radius: 8px;
+
+    background: #c9a45c;
+    color: #000;
+
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.login-button iconify-icon {
+    font-size: 20px;
+}
+
+/* Hover iniciar sesión */
+
+.login-button:hover {
+    background: transparent;
+    color: #c9a45c;
+    transform: translateY(-2px);
+}
+
+/* Botón volver */
+
+.login-back {
+    background: transparent;
+    color: #c9a45c;
+}
+
+/* Hover volver */
+
+.login-back:hover {
+    background: #c9a45c;
+    color: #000;
+}

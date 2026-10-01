@@ -1,0 +1,200 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <!-- ENCABEZADO -->
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Registrar devolución</h1>
+
+            <p>
+                Confirma la devolución del libro prestado
+            </p>
+
+        </div>
+
+
+        <!-- INFORMACIÓN DEL PRÉSTAMO -->
+
+        <div class="form-section">
+
+            <h3>Información del préstamo</h3>
+
+            <div class="row g-4">
+
+                <!-- LIBRO -->
+
+                <div class="col-md-6">
+
+                    <label>Libro</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ prestamo[1] }}
+                    </div>
+
+                </div>
+
+
+                <!-- LECTOR -->
+
+                <div class="col-md-6">
+
+                    <label>Lector</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ prestamo[2] }}
+                    </div>
+
+                </div>
+
+
+                <!-- FECHA PRÉSTAMO -->
+
+                <div class="col-md-6">
+
+                    <label>Fecha del préstamo</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ prestamo[4] }}
+                    </div>
+
+                </div>
+
+
+                <!-- FECHA DEVOLUCIÓN PROGRAMADA -->
+
+                <div class="col-md-6">
+
+                    <label>Devolución programada</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ prestamo[5] }}
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADO ACTUAL -->
+
+                <div class="col-md-6">
+
+                    <label>Estado actual</label>
+
+                    <div class="form-control grimorio-input">
+
+                        {% if prestamo[7] == 'Prestado' %}
+
+                        <span class="estado activo">
+                            Prestado
+                        </span>
+
+                        {% elif prestamo[7] == 'Vencido' %}
+
+                        <span class="estado inactivo">
+                            Vencido
+                        </span>
+
+                        {% else %}
+
+                        <span class="estado activo">
+                            Devuelto
+                        </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- FECHA DEVOLUCIÓN -->
+
+                <div class="col-md-6">
+
+                    <label>Fecha de devolución</label>
+
+                    <input type="date" name="txtFechaDevolucionReal" class="form-control grimorio-input"
+                        value="{{ fecha_actual }}" required>
+
+                </div>
+
+
+                <!-- OBSERVACIONES -->
+
+                <div class="col-12">
+
+                    <label>Observaciones</label>
+
+                    <textarea name="txtObservaciones" class="form-control grimorio-input" rows="4"
+                        placeholder="Observaciones sobre la devolución..."></textarea>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMULARIO DE CONFIRMACIÓN -->
+
+        <form action="/admin/prestamos/devolver/{{ prestamo[0] }}" method="POST">
+
+            <div class="form-section">
+
+                <h3>Confirmar devolución</h3>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de devolución</label>
+
+                        <input type="date" name="txtFechaDevolucionReal" class="form-control grimorio-input"
+                            value="{{ fecha_actual }}" required>
+
+                    </div>
+
+                    <div class="col-12">
+
+                        <label>Observaciones</label>
+
+                        <textarea name="txtObservaciones" class="form-control grimorio-input" rows="4"
+                            placeholder="Observaciones sobre la devolución..."></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <a href="/admin/prestamos" class="btn-cancelar">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn-guardar"
+                    onclick="return confirm('¿Confirmar la devolución de este libro?');">
+
+                    <iconify-icon icon="solar:check-circle-outline"></iconify-icon>
+
+                    Confirmar devolución
+
+                </button>
+
+            </div>
+
+        </form>
+ 
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

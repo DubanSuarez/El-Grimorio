@@ -1,0 +1,134 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Editar idioma</h1>
+
+            <p>Modifica la información almacenada en El Grimorio</p>
+
+        </div>
+
+
+        <form
+            action="/admin/idiomas/editar/{{ idioma[0] }}"
+            method="POST"
+        >
+
+            <div class="form-section">
+
+                <h3>Información del idioma</h3>
+
+                <div class="row g-4">
+
+                    <!-- Nombre -->
+                    <div class="col-md-6">
+
+                        <label>Nombre del idioma</label>
+
+                        <input
+                            type="text"
+                            name="txtNombre"
+                            class="form-control grimorio-input"
+                            value="{{ idioma[1] }}"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Código ISO -->
+                    <div class="col-md-6">
+
+                        <label>Código ISO</label>
+
+                        <input
+                            type="text"
+                            name="txtCodigoISO"
+                            class="form-control grimorio-input"
+                            value="{{ idioma[2] }}"
+                            maxlength="10"
+                            required
+                        >
+
+                        <small>
+                            Código ISO del idioma. Ejemplo: es, en, fr.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Estado -->
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select
+                            name="txtEstado"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                            <option value="">
+                                Seleccione un estado
+                            </option>
+
+                            <option
+                                value="1"
+                                {% if idioma[3] == '1' %}selected{% endif %}
+                            >
+                                Activo
+                            </option>
+
+                            <option
+                                value="0"
+                                {% if idioma[3] == '0' %}selected{% endif %}
+                            >
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="form-actions">
+
+                <a
+                    href="/admin/idiomas"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
+
+                    <iconify-icon icon="solar:pen-outline"></iconify-icon>
+
+                    Guardar cambios
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

@@ -1,0 +1,90 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+    <div class="grimorio-form">
+
+
+        <!-- ENCABEZADO -->
+        <div class="form-header">
+            <span class="form-icon">✦</span>
+            <h1>Registrar préstamo</h1>
+            <p>
+                Registra un nuevo préstamo en El Grimorio
+            </p>
+        </div>
+
+
+        <form action="/admin/prestamos/agregar" method="POST">
+
+            <!-- INFORMACIÓN DEL PRÉSTAMO -->
+            <div class="form-section">
+                <h3>Información del préstamo</h3>
+
+                <div class="row g-4">
+
+                    <!-- LIBRO -->
+                    <div class="col-md-6">
+                        <label>Libro</label>
+                        <select name="txtIdLibro" class="form-control grimorio-input buscador-select" required>
+                            <option value="">
+                                Seleccione un libro
+                            </option>
+                            {% for libro in libros %}
+                            <option value="{{ libro[0] }}">
+                                {{ libro[1] }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- LECTOR -->
+                    <div class="col-md-6">
+                        <label>Lector</label>
+                        <select name="txtIdLector" class="form-control grimorio-input buscador-select" required>
+                            <option value="">
+                                Seleccione un lector
+                            </option>
+                            {% for lector in lectores %}
+                            <option value="{{ lector[0] }}">
+                                {{ lector[1] }} -
+                                {{ lector[2] }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- DEVOLUCIÓN PROGRAMADA -->
+                    <div class="col-md-6">
+                        <label>Fecha de devolución programada</label>
+                        <input type="date" name="txtFechaDevolucionProgramada" class="form-control grimorio-input"
+                            required>
+                    </div>
+
+                    <!-- OBSERVACIONES -->
+                    <div class="col-12">
+                        <label>Observaciones</label>
+                        <textarea name="txtObservaciones" class="form-control grimorio-input" rows="5"
+                            placeholder="Escribe alguna observación sobre el préstamo..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTONES -->
+            <div class="form-actions">
+                <a href="/admin/prestamos" class="btn-cancelar">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn-guardar">
+                    <iconify-icon icon="solar:book-bookmark-outline">
+                    </iconify-icon>
+                    Registrar préstamo
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+{% include 'components/footer_admin.html' %}

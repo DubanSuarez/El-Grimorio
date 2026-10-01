@@ -1,0 +1,171 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>{{ editorial[1] }}</h1>
+
+            <p>
+                Información de la editorial registrada en El Grimorio
+            </p>
+
+        </div>
+
+
+        <div class="form-section">
+
+            <h3>Información de la editorial</h3>
+
+
+            <div class="row g-4">
+
+
+                <!-- NOMBRE -->
+
+                <div class="col-md-6">
+
+                    <label>Nombre</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ editorial[1] }}
+                    </div>
+
+                </div>
+
+
+                <!-- PAÍS -->
+
+                <div class="col-md-6">
+
+                    <label>País</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ editorial[2] }}
+                    </div>
+
+                </div>
+
+
+                <!-- CIUDAD -->
+
+                <div class="col-md-6">
+
+                    <label>Ciudad</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ editorial[3] }}
+                    </div>
+
+                </div>
+
+
+                <!-- SITIO WEB -->
+
+                <div class="col-md-6">
+
+                    <label>Sitio web</label>
+
+                    <div class="form-control grimorio-input">
+
+                        {% if editorial[4] %}
+
+                        <a
+                            href="{{ editorial[4] }}"
+                            target="_blank"
+                        >
+                            {{ editorial[4] }}
+                        </a>
+
+                        {% else %}
+
+                        No registrado
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADO -->
+
+                <div class="col-md-6">
+
+                    <label>Estado</label>
+
+                    <div>
+
+                        {% if editorial[5] == 1 or editorial[5] == '1' %}
+
+                        <span class="estado activo">
+                            Activo
+                        </span>
+
+                        {% else %}
+
+                        <span class="estado inactivo">
+                            Inactivo
+                        </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+
+                <!-- FECHA -->
+
+                <div class="col-md-6">
+
+                    <label>Fecha de registro</label>
+
+                    <div class="form-control grimorio-input">
+                        {{ editorial[6] }}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="form-actions">
+
+            <a
+                href="/admin/editoriales"
+                class="btn-cancelar"
+            >
+                Volver
+            </a>
+
+
+            <a
+                href="/admin/editoriales/editar/{{ editorial[0] }}"
+                class="btn-guardar"
+            >
+
+                <iconify-icon
+                    icon="solar:pen-outline"
+                ></iconify-icon>
+
+                Editar editorial
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

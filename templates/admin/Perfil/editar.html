@@ -1,0 +1,279 @@
+{% include 'components/cabecera_admin.html' %}
+
+
+<main class="perfil-page">
+
+    <!-- ========================= -->
+    <!-- ENCABEZADO -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-title">
+
+            <span class="perfil-ornamento">
+                ✦
+            </span>
+
+            <h1>
+                Editar perfil
+            </h1>
+
+            <p>
+                Actualiza la información de tu cuenta en El Grimorio
+            </p>
+
+            <div class="linea-dorada"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FORMULARIO -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="grimorio-form">
+
+
+            <!-- ========================= -->
+            <!-- CABECERA DEL FORMULARIO -->
+            <!-- ========================= -->
+
+            <div class="form-header">
+
+                <span class="form-icon">
+
+                    <i class="fa-solid fa-user-pen"></i>
+
+                </span>
+
+                <h2>
+                    Información del perfil
+                </h2>
+
+                <p>
+                    Modifica los datos que deseas actualizar.
+                </p>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- MENSAJES -->
+            <!-- ========================= -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    {% for category, message in messages %}
+
+                        <div
+                            class="alert alert-{{ category }}"
+                            role="alert"
+                        >
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+
+            <!-- ========================= -->
+            <!-- FORMULARIO -->
+            <!-- ========================= -->
+
+            <form
+                action="{{ url_for('perfil.editar') }}"
+                method="POST"
+            >
+
+
+                <!-- ========================= -->
+                <!-- NOMBRE COMPLETO -->
+                <!-- ========================= -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="txtNombreCompleto"
+                        class="form-label grimorio-label"
+                    >
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Nombre completo
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        name="txtNombreCompleto"
+                        id="txtNombreCompleto"
+                        class="form-control grimorio-input"
+                        value="{{ perfil[4] }}"
+                        placeholder="Ingrese su nombre completo"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- USUARIO -->
+                <!-- ========================= -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="txtUsuario"
+                        class="form-label grimorio-label"
+                    >
+
+                        <i class="fa-solid fa-at"></i>
+
+                        Nombre de usuario
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        name="txtUsuario"
+                        id="txtUsuario"
+                        class="form-control grimorio-input"
+                        value="{{ perfil[3] }}"
+                        placeholder="Ingrese su nombre de usuario"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- CORREO -->
+                <!-- ========================= -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="txtCorreo"
+                        class="form-label grimorio-label"
+                    >
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        Correo electrónico
+
+                    </label>
+
+
+                    <input
+                        type="email"
+                        name="txtCorreo"
+                        id="txtCorreo"
+                        class="form-control grimorio-input"
+                        value="{{ perfil[5] }}"
+                        placeholder="Ingrese su correo electrónico"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- INFORMACIÓN -->
+                <!-- ========================= -->
+
+                <div class="password-info">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <p>
+                        Estos cambios actualizarán la información de tu cuenta en El Grimorio.
+                    </p>
+
+                </div>
+
+
+                <!-- ========================= -->
+                <!-- BOTONES -->
+                <!-- ========================= -->
+
+                <div class="form-buttons">
+
+
+                    <!-- CANCELAR -->
+
+                    <a
+                        href="{{ url_for('perfil.perfil') }}"
+                        class="btn-cancelar"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Cancelar
+
+                    </a>
+
+
+                    <!-- GUARDAR -->
+
+                    <button
+                        type="submit"
+                        class="btn-guardar"
+                    >
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Guardar cambios
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- FRASE -->
+    <!-- ========================= -->
+
+    <div class="container">
+
+        <div class="perfil-frase">
+
+            <span>
+                ❝
+            </span>
+
+            <p>
+                Cada página del Grimorio guarda la identidad de quien la custodia.
+            </p>
+
+            <span>
+                ❞
+            </span>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+{% include 'components/footer_admin.html' %}

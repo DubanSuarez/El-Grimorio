@@ -1,0 +1,109 @@
+{% include 'components/cabecera_admin.html' %}
+
+
+<div class="container py-5">
+    <div class="grimorio-form">
+
+
+        <!-- ENCABEZADO -->
+        <div class="form-header">
+            <span class="form-icon">✦</span>
+            <h1>Editar usuario</h1>
+            <p>
+                Modifica la información del usuario registrado
+            </p>
+        </div>
+
+
+        <form action="/admin/usuarios/editar/{{ usuario[0] }}" method="POST">
+
+            <!-- INFORMACIÓN -->
+            <div class="form-section">
+                <h3>Información del usuario</h3>
+                <div class="row g-4">
+
+                    <!-- ROL -->
+                    <div class="col-md-6">
+                        <label>Rol</label>
+                        <select name="txtIdRol" class="form-control grimorio-input" required>
+                            <option value="">
+                                Seleccione un rol
+                            </option>
+                            {% for rol in roles %}
+                            {% if rol[1]|lower != 'administrador' %}
+                            <option value="{{ rol[0] }}" {% if rol[0]==usuario[1] %} selected {% endif %}>
+                                {{ rol[1] }}
+                            </option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+
+
+                    <!-- USUARIO -->
+                    <div class="col-md-6">
+                        <label>Nombre de usuario</label>
+                        <input type="text" name="txtUsuario" class="form-control grimorio-input"
+                            value="{{ usuario[3] }}" required>
+                    </div>
+
+
+                    <!-- NOMBRE COMPLETO -->
+                    <div class="col-md-6">
+                        <label>Nombre completo</label>
+                        <input type="text" name="txtNombreCompleto" class="form-control grimorio-input"
+                            value="{{ usuario[4] }}" required>
+                    </div>
+
+
+                    <!-- CORREO -->
+                    <div class="col-md-6">
+                        <label>Correo electrónico</label>
+                        <input type="email" name="txtCorreo" class="form-control grimorio-input"
+                            value="{{ usuario[5] }}" required>
+                    </div>
+
+
+                    <!-- CONTRASEÑA -->
+                    <div class="col-md-6">
+                        <label>Nueva contraseña</label>
+                        <input type="password" name="txtContrasena" class="form-control grimorio-input"
+                            placeholder="Dejar vacío para conservar la actual">
+                        <small>
+                            Solo diligencia este campo si deseas cambiar la contraseña.
+                        </small>
+                    </div>
+
+
+                    <!-- ESTADO -->
+                    <div class="col-md-6">
+                        <label>Estado</label>
+                        <select name="txtEstado" class="form-control grimorio-input" required>
+                            <option value="1" {% if usuario[6]==1 or usuario[6]=='1' %} selected {% endif %}>
+                                Activo
+                            </option>
+                            <option value="0" {% if usuario[6]==0 or usuario[6]=='0' %} selected {% endif %}>
+                                Inactivo
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="form-actions">
+                <a href="/admin/usuarios" class="btn-cancelar">
+                    Cancelar
+                </a>
+                <button type="submit" class="btn-guardar">
+                    <iconify-icon icon="solar:pen-outline">
+                    </iconify-icon>
+                    Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% include 'components/footer_admin.html' %}

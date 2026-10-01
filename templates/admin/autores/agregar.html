@@ -1,0 +1,162 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <!-- ENCABEZADO -->
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Agregar autor</h1>
+
+            <p>
+                Registra un nuevo autor en El Grimorio
+            </p>
+
+        </div>
+
+
+        <form
+            action="/admin/autores/agregar"
+            method="POST"
+        >
+
+
+            <!-- INFORMACIÓN DEL AUTOR -->
+
+            <div class="form-section">
+
+                <h3>Información del autor</h3>
+
+                <div class="row g-4">
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="col-12">
+
+                        <label>Nombre del autor</label>
+
+                        <input
+                            type="text"
+                            name="txtNombre"
+                            class="form-control grimorio-input"
+                            placeholder="Escribe el nombre completo"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- NACIONALIDAD -->
+
+                    <div class="col-md-6">
+
+                        <label>Nacionalidad</label>
+
+                        <input
+                            type="text"
+                            name="txtNacionalidad"
+                            class="form-control grimorio-input"
+                            placeholder="Ej. Colombiana"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- FECHA NACIMIENTO -->
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de nacimiento</label>
+
+                        <input
+                            type="date"
+                            name="txtFechaNacimiento"
+                            class="form-control grimorio-input"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- FECHA FALLECIMIENTO -->
+
+                    <div class="col-md-6">
+
+                        <label>Fecha de fallecimiento</label>
+
+                        <input
+                            type="date"
+                            name="txtFechaFallecimiento"
+                            class="form-control grimorio-input"
+                        >
+
+                        <small class="text-muted">
+                            Déjalo vacío si el autor está vivo.
+                        </small>
+
+                    </div>
+
+
+                    <!-- BIOGRAFÍA -->
+
+                    <div class="col-12">
+
+                        <label>Biografía</label>
+
+                        <textarea
+                            name="txtBiografia"
+                            class="form-control grimorio-input"
+                            rows="6"
+                            placeholder="Escribe una breve biografía del autor..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+
+            <div class="form-actions">
+
+                <a
+                    href="/admin/autores"
+                    class="btn-cancelar"
+                >
+                    Cancelar
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="btn-guardar"
+                >
+
+                    <iconify-icon
+                        icon="solar:user-plus-outline"
+                    ></iconify-icon>
+
+                    Guardar autor
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

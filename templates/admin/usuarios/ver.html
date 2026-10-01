@@ -1,0 +1,171 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+        <!-- ENCABEZADO -->
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Información del usuario</h1>
+
+            <p>
+                Consulta los datos registrados del usuario
+            </p>
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="form-section">
+
+            <h3>Datos del usuario</h3>
+
+            <div class="row g-4">
+
+
+                <!-- ID -->
+
+               
+                    <input
+                        type="hidden"
+                        class="form-control grimorio-input"
+                        value="{{ usuario[0] }}"
+                        readonly
+                    >
+
+                <!-- ROL -->
+
+                <div class="col-md-6">
+
+                    <label>Rol</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ usuario[2] }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- USUARIO -->
+
+                <div class="col-md-6">
+
+                    <label>Nombre de usuario</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ usuario[3] }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- NOMBRE COMPLETO -->
+
+                <div class="col-md-6">
+
+                    <label>Nombre completo</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ usuario[4] }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- CORREO -->
+
+                <div class="col-md-6">
+
+                    <label>Correo electrónico</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ usuario[5] }}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- ESTADO -->
+
+                <div class="col-md-6">
+
+                    <label>Estado</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{% if usuario[6] == 1 or usuario[6] == '1' %}Activo{% else %}Inactivo{% endif %}"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- FECHA DE REGISTRO -->
+
+                <div class="col-md-6">
+
+                    <label>Fecha de registro</label>
+
+                    <input
+                        type="text"
+                        class="form-control grimorio-input"
+                        value="{{ usuario[7] }}"
+                        readonly
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="form-actions">
+
+            <a
+                href="/admin/usuarios"
+                class="btn-cancelar"
+            >
+                Volver
+            </a>
+
+
+            <a
+                href="/admin/usuarios/editar/{{ usuario[0] }}"
+                class="btn-guardar"
+            >
+
+                <iconify-icon icon="solar:pen-outline"></iconify-icon>
+
+                Editar usuario
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

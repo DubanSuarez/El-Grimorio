@@ -1,0 +1,158 @@
+{% include 'components/cabecera_admin.html' %}
+
+<div class="container py-5">
+
+    <div class="grimorio-form">
+
+
+        <!-- ENCABEZADO -->
+
+        <div class="form-header">
+
+            <span class="form-icon">✦</span>
+
+            <h1>Agregar categoría</h1>
+
+            <p>
+                Registra una nueva categoría en El Grimorio
+            </p>
+
+        </div>
+
+
+        <form
+            action="/admin/categorias/agregar"
+            method="POST">
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="form-section">
+
+                <h3>Información de la categoría</h3>
+
+                <div class="row g-4">
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="col-12">
+
+                        <label>
+                            Nombre de la categoría
+                        </label>
+
+                        <input
+                            type="text"
+                            name="txtNombre"
+                            class="form-control grimorio-input"
+                            placeholder="Ej. Fantasía"
+                            required>
+
+                    </div>
+
+
+                    <!-- DESCRIPCIÓN -->
+
+                    <div class="col-12">
+
+                        <label>
+                            Descripción
+                        </label>
+
+                        <textarea
+                            name="txtDescripcion"
+                            class="form-control grimorio-input"
+                            rows="5"
+                            placeholder="Escribe una descripción de la categoría..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <!-- FECHA -->
+
+                    <div class="col-md-6">
+
+                        <label>
+                            Fecha de registro
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            name="txtFechaRegistro"
+                            class="form-control grimorio-input"
+                            required>
+
+                    </div>
+
+
+                    <!-- ESTADO -->
+
+                    <div class="col-md-6">
+
+                        <label>
+                            Estado
+                        </label>
+
+                        <select
+                            name="txtEstado"
+                            class="form-control grimorio-input"
+                            required>
+
+                            <option value="">
+                                Seleccione un estado
+                            </option>
+
+                            <option value="1">
+                                Activo
+                            </option>
+
+                            <option value="0">
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+
+            <div class="form-actions">
+
+                <a
+                    href="/admin/categorias"
+                    class="btn-cancelar">
+
+                    Cancelar
+
+                </a>
+
+
+                <button
+                    type="submit"
+                    class="btn-guardar">
+
+                    <iconify-icon
+                        icon="solar:add-circle-outline">
+                    </iconify-icon>
+
+                    Guardar categoría
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+{% include 'components/footer_admin.html' %}

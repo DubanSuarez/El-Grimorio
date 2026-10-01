@@ -1,0 +1,286 @@
+{% include 'components/cabecera_admin.html' %}
+
+<!-- ================= DASHBOARD ================= -->
+<div class="container">
+    <main class="admin-dashboard">
+
+        <!-- ================= BIENVENIDA ================= -->
+        <section class="welcome-card">
+            <div class="welcome-content">
+                <h1>
+                    Bienvenido de nuevo 👋
+                </h1>
+                <p>
+                    Este es el resumen de la actividad de El Grimorio.
+                </p>
+            </div>
+            <div class="welcome-date">
+                {{ now.strftime('%d de %B') }}<br>
+                de {{ now.strftime('%Y') }}
+            </div>
+        </section>
+
+        <!-- ================= ESTADÍSTICAS ================= -->
+        <div class="container">
+            <section class="stats-grid">
+                <div class="row">
+
+                    <!-- ================= LIBROS ================= -->
+                    <div class="col-md-3">
+                        <article class="stat-card">
+                            <div class="stat-icon stat-books">
+                                <iconify-icon icon="solar:book-bold"></iconify-icon>
+                            </div>
+                            <strong class="stat-number">
+                                {{ estadisticas['libros'] }}
+                            </strong>
+                            <span class="stat-title">
+                                Libros
+                            </span>
+                            <span class="stat-description">
+                                Registrados
+                            </span>
+                        </article>
+                    </div>
+
+                    <!-- ================= AUTORES ================= -->
+                    <div class="col-md-3">
+                        <article class="stat-card">
+                            <div class="stat-icon stat-authors">
+                                <iconify-icon icon="solar:pen-new-square-bold"></iconify-icon>
+                            </div>
+                            <strong class="stat-number">
+                                {{ estadisticas['autores'] }}
+                            </strong>
+                            <span class="stat-title">
+                                Autores
+                            </span>
+                            <span class="stat-description">
+                                Registrados
+                            </span>
+                        </article>
+                    </div>
+
+                    <!-- ================= USUARIOS ================= -->
+                    <div class="col-md-3">
+                        <article class="stat-card">
+                            <div class="stat-icon stat-users">
+                                <iconify-icon icon="solar:users-group-rounded-bold"></iconify-icon>
+                            </div>
+                            <strong class="stat-number">
+                                {{ estadisticas['usuarios'] }}
+                            </strong>
+                            <span class="stat-title">
+                                Usuarios
+                            </span>
+                            <span class="stat-description">
+                                Activos
+                            </span>
+                        </article>
+                    </div>
+
+                    <!-- ================= PRÉSTAMOS ================= -->
+                    <div class="col-md-3">
+                        <article class="stat-card">
+                            <div class="stat-icon stat-loans">
+                                <iconify-icon icon="solar:key-bold"></iconify-icon>
+                            </div>
+                            <strong class="stat-number">
+                                {{ estadisticas['prestamos'] }}
+                            </strong>
+                            <span class="stat-title">
+                                Préstamos
+                            </span>
+                            <span class="stat-description">
+                                Activos
+                            </span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= ACCIONES RÁPIDAS ================= -->
+        <section class="quick-actions">
+            <h2>
+                ACCIONES RÁPIDAS
+            </h2>
+            <div class="quick-actions-grid">
+                <div class="row">
+                    <!-- PRÉSTAMOS -->
+                    <div class="col-md-3">
+                        <a href="/admin/prestamos/agregar" class="quick-action action-loans">
+                            <iconify-icon icon="solar:calendar-add-bold"></iconify-icon>
+                            <span>
+                                Préstamos
+                            </span>
+                        </a>
+                    </div>
+                    <!-- LIBRO -->
+                    <div class="col-md-3">
+                        <a href="/admin/libros/agregar" class="quick-action action-books">
+                            <iconify-icon icon="solar:book-2-bold"></iconify-icon>
+                            <span>
+                                Libro
+                            </span>
+                        </a>
+                    </div>
+                    <!-- EDITORIAL -->
+                    <div class="col-md-3">
+                        <a href="/admin/editoriales/agregar" class="quick-action action-publishers">
+                            <iconify-icon icon="solar:pen-new-square-bold"></iconify-icon>
+                            <span>
+                                Editorial
+                            </span>
+                        </a>
+                    </div>
+                    <!-- AUTOR -->
+                    <div class="col-md-3">
+                        <a href="/admin/autores/agregar" class="quick-action action-authors">
+                            <iconify-icon icon="solar:pen-new-square-bold"></iconify-icon>
+                            <span>
+                                Autor
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INFORMACIÓN ================= -->
+        <section class="dashboard-info-grid">
+            <div class="row">
+                <!-- ================= ACTIVIDAD RECIENTE ================= -->
+                <div class="col-md-6">
+                    <article class="dashboard-panel activity-panel">
+                        <h2>
+                            Actividad reciente
+                        </h2>
+                        {% if actividad %}
+                        <ul>
+                            {% for item in actividad %}
+                            <li>
+                                <strong>
+                                    {{ item['tipo'] }}
+                                </strong>
+                                <span>
+                                    {{ item['nombre'] }}
+                                </span>
+                                <small>
+                                    {{ item['fecha'].strftime('%d/%m/%Y %H:%M') }}
+                                </small>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <div class="dashboard-empty">
+                            <i class="fa-solid fa-scroll"></i>
+                            <p>
+                                No hay actividad reciente.
+                            </p>
+                        </div>
+                        {% endif %}
+                    </article>
+                </div>
+
+                <!-- ================= LIBROS MÁS SOLICITADOS ================= -->
+                <div class="col-md-6">
+                    <article class="dashboard-panel popular-panel">
+                        <h2>
+                            Libros más solicitados
+                        </h2>
+                        {% if libros_populares %}
+                        <ol>
+                            {% for libro in libros_populares %}
+                            <li>
+                                <strong>
+                                    {{ libro[0] }}
+                                </strong>
+                                <span>
+                                    Solicitudes registradas
+                                </span>
+                                <small>
+
+                                    {{ libro[1] }}
+                                    {% if libro[1] == 1 %}
+                                    préstamo
+                                    {% else %}
+                                    préstamos
+                                    {% endif %}
+                                </small>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                        {% else %}
+                        <div class="dashboard-empty">
+                            <i class="fa-solid fa-book-open"></i>
+                            <p>
+                                Todavía no hay préstamos registrados.
+                            </p>
+                        </div>
+                        {% endif %}
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RESUMEN ADICIONAL ================= -->
+        <section class="dashboard-summary">
+            <div class="row">
+                <!-- LECTORES -->
+                <div class="col-md-4">
+                    <div class="summary-card">
+                        <span class="summary-icon">
+                            <iconify-icon icon="solar:user-id-bold"></iconify-icon>
+                        </span>
+                        <div>
+                            <strong>
+                                {{ estadisticas['lectores'] }}
+                            </strong>
+                            <span>
+                                Lectores activos
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VENCIDOS -->
+                <div class="col-md-4">
+                    <div class="summary-card">
+                        <span class="summary-icon">
+                            <iconify-icon icon="solar:danger-triangle-bold"></iconify-icon>
+                        </span>
+                        <div>
+                            <strong>
+                                {{ estadisticas['vencidos'] }}
+                            </strong>
+                            <span>
+                                Préstamos vencidos
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DEVUELTOS -->
+                <div class="col-md-4">
+                    <div class="summary-card">
+                        <span class="summary-icon">
+                            <iconify-icon icon="solar:check-circle-bold"></iconify-icon>
+                        </span>
+                        <div>
+                            <strong>
+                                {{ estadisticas['devueltos'] }}
+                            </strong>
+                            <span>
+                                Préstamos devueltos
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+
+{% include 'components/footer_admin.html' %}

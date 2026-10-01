@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Grimorio | Acceso administrativo</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lora:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- LOGIN CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <!-- ================= FONDO ================= -->
+    <div class="login-page">
+        <!-- DECORACIÓN -->
+        <div class="magic-symbol symbol-one">
+            ✦
+        </div>
+        <div class="magic-symbol symbol-two">
+            ✧
+        </div>
+        <div class="magic-symbol symbol-three">
+            ✦
+        </div>
+
+        <!-- ================= LOGIN ================= -->
+        <main class="login-container">
+            <!-- LOGO -->
+            <div class="login-logo">
+                <img src="{{ url_for('static', filename='img/LogoLogin.png') }}" alt="El Grimorio">
+            </div>
+
+            <!-- ENCABEZADO -->
+            <div class="login-header">
+                <span class="login-ornament">
+                    ✦
+                </span>
+                <h1>
+                    El Grimorio
+                </h1>
+                <p>
+                    Acceso al panel administrativo
+                </p>
+            </div>
+
+            <!-- LÍNEA DECORATIVA -->
+            <div class="login-divider">
+                <span></span>
+                <i>✦</i>
+                <span></span>
+            </div>
+
+            <!-- ================= FORMULARIO ================= -->
+            <form action="{{ url_for('admin_login') }}" method="POST" class="login-form">
+
+                <!-- USUARIO -->
+                <div class="form-group">
+                    <label for="txtUsuario">
+                        Usuario
+                    </label>
+                    <div class="input-wrapper">
+                        <iconify-icon icon="solar:user-bold"></iconify-icon>
+                        <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Ingrese su usuario"
+                            autocomplete="username" required>
+                    </div>
+                </div>
+
+                <!-- CONTRASEÑA -->
+                <div class="form-group">
+                    <label for="txtPassword">
+                        Contraseña
+                    </label>
+                    <div class="input-wrapper">
+                        <iconify-icon icon="solar:lock-keyhole-bold"></iconify-icon>
+                        <input type="password" id="txtPassword" name="txtPassword" placeholder="Ingrese su contraseña"
+                            autocomplete="current-password" required>
+                    </div>
+                </div>
+
+                <!-- BOTÓN -->
+                <div class="login-buttons">
+
+                    <!-- VOLVER -->
+                    <a href="/" class="login-button login-back">
+                        <iconify-icon icon="solar:arrow-left-bold"></iconify-icon>
+                        <span>
+                            Volver
+                        </span>
+                    </a>
+
+                    <!-- INICIAR SESIÓN -->
+                    <button type="submit" class="login-button">
+                        <iconify-icon icon="solar:login-3-bold"></iconify-icon>
+                        <span>
+                            Iniciar sesión
+                        </span>
+                    </button>
+
+                </div>
+            </form>
+
+            <!-- ================= MENSAJES ================= -->
+            {% with mensajes = get_flashed_messages(with_categories=true) %}
+            {% if mensajes %}
+            <div class="login-messages">
+                {% for categoria, mensaje in mensajes %}
+                <div class="login-alert alert-{{ categoria }}">
+                    <iconify-icon icon="solar:danger-circle-bold"></iconify-icon>
+                    <span>
+                        {{ mensaje }}
+                    </span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <!-- PIE -->
+            <div class="login-footer">
+                <span>✦</span>
+                <p>
+                    Biblioteca El Grimorio
+                </p>
+                <span>✦</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- ICONIFY -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js">
+    </script>
+</body>
+
+</html>

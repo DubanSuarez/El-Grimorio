@@ -1,0 +1,1813 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #111111 !important;
+    color: #ffffff;
+    font-family: "Cinzel", sans-serif;
+}
+
+
+/* Logo y Iconos */
+
+.contenedorLogo {
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    gap: 10px;
+}
+
+.Logo {
+    width: 35px;
+    height: 35px;
+}
+
+.TextoLogo {
+    font-family: "Cinzel", serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    color: #C9A45C !important;
+}
+
+/* Menú */
+
+.navbar-grimorio {
+    background-color: #000000;
+}
+
+
+.navbar-grimorio .nav-link,
+.navbar-grimorio .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    border: 2px solid #C9A45C !important;
+    border-radius: 6px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23C9A45C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+.navbar-grimorio .container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.contenedorLogo {
+    display: flex;
+    align-items: center;
+}
+
+/* Espacio central */
+.navbar-collapse {
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menú */
+.menu-central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 0 auto;
+}
+
+/* Botón derecho */
+.boton-derecha {
+    margin-left: auto;
+}
+
+
+
+.TextoMenu {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Lora, serif;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+
+
+/*Boton Inicio de Sesion*/
+
+.btn-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #C9A45C !important;
+    border: 1px solid #C9A45C !important;
+    background-color: transparent;
+}
+
+.btn-login iconify-icon {
+    color: #C9A45C;
+    font-size: 20px;
+}
+
+.btn-login:hover {
+    color: #C9A45C;
+    border-color: #C9A45C;
+    background-color: transparent;
+}
+
+.btn-login {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+}
+
+
+@media (max-width: 991.98px) {
+
+    .navbar-collapse {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu-central {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+        margin: 0;
+        padding-left: 15px;
+    }
+
+    .boton-derecha {
+        margin-left: 0;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    background-image: url("../img/Hero.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-bottom: 1px solid #C9A45C;
+}
+
+
+/* Oscurecimiento */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg,
+            rgba(5, 5, 5, 0.55) 0%,
+            rgba(5, 5, 5, 0.20) 60%,
+            rgba(5, 5, 5, 0.08) 100%);
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+.hero-content {
+    width: min(620px, 90%);
+    min-height: 400px;
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* arriba ↕ abajo */
+
+    padding-left: 100px;
+}
+
+.hero-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url('../img/TextoHero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.hr {
+    width: 250px;
+    height: 30px;
+
+    background-image: url('../img/hr.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130% auto;
+}
+
+
+.hero-content h1 {
+    margin-bottom: 5px;
+    color: #c49a3a;
+    font-family: "Cinzel", serif;
+    font-size: clamp(28px, 2vw, 22px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.hero-content p {
+    width: min(350px, 100%);
+    margin-bottom: 15px;
+
+    color: #f1f1f1;
+    font-family: "Lora", serif;
+    font-size: clamp(16px, 1.4vw, 15px);
+    line-height: 1.4;
+
+    text-align: left;
+}
+
+
+
+
+/* =====================================================
+   CATALOG BUTTON
+===================================================== */
+
+.catalog-button {
+    width: 178px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #c49a3a;
+    text-decoration: none;
+    font-family: lora, serif;
+    font-size: 14px;
+    border: 1px solid #c49a3a;
+    border-radius: 4px;
+
+    background-color: rgba(5, 5, 5, 0.35);
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.catalog-button:hover {
+    background-color: #b68c2a;
+    color: white;
+}
+
+.flechabotones {
+    width: 14px;
+    height: auto;
+}
+
+.arrow {
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    line-height: 0;
+    margin-top: -2px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    width: 100%;
+    background-color: #101010;
+    color: #ffffff;
+    border-top: 1px solid #C9A45C;
+}
+
+.footer-main {
+    padding: 45px 0;
+}
+
+
+/* =====================================================
+   MARCA
+===================================================== */
+
+.footer-brand h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: "Cinzel", serif;
+    font-size: clamp(22px, 2vw, 28px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+    max-width: 400px;
+    margin-bottom: 25px;
+    color: #eeeeee;
+    font-family: "Lora", serif !important;
+    font-size: clamp(14px, 1.4vw, 15px);
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   REDES SOCIALES
+===================================================== */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #111111 !important;
+
+    text-decoration: none;
+    font-size: 20px;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+    background-color: #C9A45C;
+    color: #111111 !important;
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+.TituloFooter {
+    margin-bottom: 20px;
+
+    color: #C9A45C;
+    font-family: "Cinzel", serif !important;
+    font-size: clamp(17px, 1.5vw, 20px) !important;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   LISTAS
+===================================================== */
+
+.footer-main ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-main li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #eeeeee;
+    font-family: "Lora", serif !important;
+    font-size: clamp(14px, 1.4vw, 15px);
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   CONTACTOS
+===================================================== */
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-list i {
+    width: 18px;
+    margin-top: 3px;
+    color: #C9A45C;
+}
+
+
+/* =====================================================
+   ENLACES
+===================================================== */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-main a {
+    color: #eeeeee;
+    text-decoration: none;
+    word-break: break-word;
+
+    transition: color 0.3s ease;
+}
+
+.footer-main a:hover {
+    color: #C9A45C;
+}
+
+
+/* =====================================================
+   SEPARACIÓN DE COLUMNAS
+===================================================== */
+
+.footer-main .row {
+    row-gap: 35px;
+}
+
+
+/* =====================================================
+   FOOTER BOTTOM
+===================================================== */
+
+.footer-bottom {
+    width: 100%;
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    background-color: #000000 !important;
+    border-top: 1px solid rgba(201, 164, 92, 0.25);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #aaaaaa;
+    font-family: "Lora", serif !important;
+    font-size: clamp(13px, 1.4vw, 15px);
+
+    text-align: center;
+    line-height: 1.5;
+}
+
+.footer-bottom span {
+    color: #C9A45C;
+}
+
+
+@media (max-width: 767.98px) {
+
+    .footer-main {
+        padding: 35px 20px;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .TituloFooter {
+        margin-top: 10px;
+    }
+
+    .footer-main .col-md-3,
+    .footer-main .col-md-2 {
+        text-align: center;
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   MESA DEL BIBLIOTECARIO
+   ========================================================= */
+
+.mesa-bibliotecario {
+    position: relative;
+    min-height: 350px;
+
+    background-color: #111111;
+
+    color: #f4f0e8;
+
+    overflow: hidden;
+
+    border-top: 1px solid #80652b;
+    border-bottom: 1px solid #80652b;
+}
+
+
+/* ---------------------------------------------------------
+   DECORACIÓN SUPERIOR
+   --------------------------------------------------------- */
+
+.decoracion-superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 32px;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.8)
+        );
+
+    border-bottom: 1px solid rgba(191, 151, 61, 0.35);
+
+    opacity: 0.9;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENIDO
+   --------------------------------------------------------- */
+
+.mesa-contenido {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 54px 20px 50px;
+
+    text-align: center;
+}
+
+
+/* TÍTULO */
+
+.mesa-contenido h1 {
+    margin: 0;
+
+    color: #c6a55a;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* SUBTÍTULO */
+
+.subtitulo {
+    margin: 10px 0 7px;
+
+    color: #f0ece5;
+
+    font-family: "Lora", serif;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* ---------------------------------------------------------
+   ORNAMENTO
+   --------------------------------------------------------- */
+
+.ornamento {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 120px;
+
+    margin: 7px auto 30px;
+
+    color: #b99545;
+}
+
+.ornamento span {
+    display: block;
+
+    width: 35px;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #b99545
+    );
+}
+
+.ornamento span:last-child {
+    background: linear-gradient(
+        to left,
+        transparent,
+        #b99545
+    );
+}
+
+.ornamento i {
+    font-size: 6px;
+
+    transform: rotate(45deg);
+}
+
+
+/* ---------------------------------------------------------
+   OPCIONES
+   --------------------------------------------------------- */
+
+.opciones-biblioteca {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 28px;
+}
+
+/* ---------------------------------------------------------
+   TARJETA
+   --------------------------------------------------------- */
+
+.opcion-biblioteca {
+    width: 104px;
+    height: 115px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    text-decoration: none;
+
+    color: #f3eee6;
+
+    border: 1px solid #b08a3c;
+
+    background-color: rgba(18, 18, 18, 0.75);
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* HOVER */
+
+.opcion-biblioteca:hover {
+    color: #ffffff;
+
+    background-color: #1b1b1b;
+
+    border-color: #d2ad5d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ---------------------------------------------------------
+   ICONO
+   --------------------------------------------------------- */
+
+.icono-opcion {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c49c48;
+
+    border-radius: 50%;
+
+    color: #c9a353;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.icono-opcion iconify-icon {
+    font-size: 35px;
+}
+
+.opcion-biblioteca:hover .icono-opcion {
+    color: #151515;
+
+    background-color: #c9a353;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO DE LAS TARJETAS
+   --------------------------------------------------------- */
+
+.opcion-biblioteca > span {
+    font-family: "Lora", serif;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .mesa-contenido {
+        padding: 45px 15px 40px;
+    }
+
+    .mesa-contenido h1 {
+        font-size: 18px;
+    }
+
+    .opciones-biblioteca {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .opcion-biblioteca {
+        width: 105px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .mesa-contenido h1 {
+        font-size: 16px;
+    }
+
+    .subtitulo {
+        font-size: 13px;
+    }
+
+    .opciones-biblioteca {
+        display: grid;
+
+        grid-template-columns: repeat(2, 105px);
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   LAS ESTANTERÍAS
+   ========================================================= */
+
+.estanterias {
+    position: relative;
+
+    width: 100%;
+
+    background-image: url("../img/Banner2.png");
+
+    border-top: 1px solid #7d7567;
+    border-bottom: 1px solid #7d7567;
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   CONTENIDO
+   --------------------------------------------------------- */
+
+.estanterias-contenido {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 43px 20px 40px;
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULO
+   --------------------------------------------------------- */
+
+.estanterias h2 {
+    margin: 0 0 10px;
+
+    color: #292725;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPCIÓN
+   --------------------------------------------------------- */
+
+.descripcion-estanterias {
+    margin: 0 0 31px;
+
+    color: #393631;
+
+    font-family: "Lora", serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CARRUSEL
+   ========================================================= */
+
+.carrusel-libros {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.tarjeta-libro {
+    width: 138px;
+
+    min-width: 138px;
+
+    background-color: #111111;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    box-shadow:
+        0 4px 9px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tarjeta-libro:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 9px 18px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   PORTADA
+   ========================================================= */
+
+.portada-libro {
+    width: 100%;
+
+    height: 168px;
+
+    overflow: hidden;
+
+    background-color: #222;
+}
+
+.portada-libro img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-libro:hover .portada-libro img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.informacion-libro {
+    min-height: 108px;
+
+    padding: 8px 9px 10px;
+
+    color: #f0ece4;
+}
+
+
+/* TÍTULO DEL LIBRO */
+
+.informacion-libro h3 {
+    margin: 0 0 4px;
+
+    min-height: 24px;
+
+    color: #f1ede6;
+
+    font-family: "Lora", serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* AUTOR */
+
+.autor-libro {
+    margin: 0 0 4px;
+
+    color: #bcb7ae;
+
+    font-family: "Lora", serif;
+
+    font-size: 7.5px;
+
+    line-height: 1.2;
+}
+
+
+/* GÉNERO */
+
+.genero-libro {
+    margin: 0 0 5px;
+
+    color: #bcb7ae;
+
+    font-family: "Lora", serif;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   ESTRELLAS
+   ========================================================= */
+
+.estrellas {
+    display: flex;
+
+    gap: 3px;
+
+    margin-bottom: 8px;
+}
+
+.estrellas i {
+    color: #c8a34e;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   BOTÓN VER DETALLES
+   ========================================================= */
+
+.btn-detalles {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 72px;
+
+    min-height: 23px;
+
+    margin: 0 auto;
+
+    color: #eee9df;
+
+    background-color: #18352d;
+
+    border-radius: 4px;
+
+    font-family: "Lora", serif;
+
+    font-size: 7px;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-detalles i {
+    font-size: 6px;
+}
+
+.btn-detalles:hover {
+    color: white;
+
+    background-color: #285345;
+
+    transform: translateX(1px);
+}
+
+
+/* =========================================================
+   FLECHAS
+   ========================================================= */
+
+.flecha-carrusel {
+    position: absolute;
+
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: #ffffff;
+
+    background-color: transparent;
+
+    border: 1px solid #ffffff;
+
+    border-radius: 50%;
+
+    transform: translateY(-50%);
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.flecha-carrusel i {
+    font-size: 11px;
+}
+
+
+/* IZQUIERDA */
+
+.flecha-izquierda {
+    left: -12px;
+}
+
+
+/* DERECHA */
+
+.flecha-derecha {
+    right: -12px;
+}
+
+
+/* HOVER */
+
+.flecha-carrusel:hover {
+    color: #222;
+
+    background-color: #ffffff;
+
+    transform: translateY(-50%) scale(1.08);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .estanterias-contenido {
+        padding: 38px 15px;
+    }
+
+    .carrusel-libros {
+        gap: 12px;
+    }
+
+    .tarjeta-libro {
+        width: 125px;
+        min-width: 125px;
+    }
+
+    .portada-libro {
+        height: 155px;
+    }
+
+    .flecha-izquierda {
+        left: -5px;
+    }
+
+    .flecha-derecha {
+        right: -5px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .tarjeta-libro {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    .portada-libro {
+        height: 150px;
+    }
+
+    /*
+       En pantallas pequeñas ocultamos el tercer libro
+       para mantener el diseño limpio.
+    */
+
+    .tarjeta-libro:nth-of-type(3) {
+        display: none;
+    }
+
+    .estanterias h2 {
+        font-size: 18px;
+    }
+
+    .descripcion-estanterias {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   NOVEDADES DEL GRIMORIO
+   ========================================================= */
+
+.novedades-grimorio {
+    width: 100%;
+    background-color: #111111;
+    color: #eee9df;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+
+    padding-bottom: 21px;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.novedades-contenido {
+    max-width: 650px;
+    margin: 0 auto;
+
+    padding: 19px 20px 0;
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULO
+   --------------------------------------------------------- */
+
+.novedades-contenido h2 {
+    margin: 0 0 8px;
+
+    color: #bd974b;
+
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPCIÓN
+   --------------------------------------------------------- */
+
+.novedades-descripcion {
+    margin: 0;
+
+    color: #e2ddd4;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ORNAMENTO
+   ========================================================= */
+
+.ornamento-novedades {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 90px;
+
+    margin: 7px auto 17px;
+
+    color: #a27d38;
+}
+
+
+.ornamento-novedades span {
+    width: 27px;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #a27d38
+    );
+}
+
+
+.ornamento-novedades span:last-child {
+    background: linear-gradient(
+        to left,
+        transparent,
+        #a27d38
+    );
+}
+
+
+.ornamento-novedades i {
+    font-size: 4px;
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.novedades-grid {
+    max-width: 680px !important;
+    margin: 0 auto !important;
+
+    row-gap: 15px;
+}
+
+
+.novedades-col {
+    display: flex;
+    justify-content: center;
+
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.novedad-card {
+    display: flex;
+
+    width: 320px !important;
+    height: 180px;
+
+    overflow: hidden;
+
+    background-color: #151515;
+
+    border: 1px solid #997333;
+    border-radius: 4px;
+
+    text-align: left;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.novedad-card:hover {
+    transform: translateY(-2px);
+    border-color: #c19a4b;
+}
+
+
+/* =========================================================
+   IMAGEN
+   ========================================================= */
+
+.novedad-imagen {
+    width: 108px;
+    min-width: 108px;
+
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+.novedad-imagen img {
+    display: block;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    object-position: center !important;
+}
+
+
+.novedad-card:hover .novedad-imagen img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.novedad-info {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 9px 8px 7px;
+}
+
+
+.novedad-info h3 {
+    margin: 0 0 6px;
+
+    color: #e8e1d6;
+
+    font-family: "Lora", serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.25;
+}
+
+
+.novedad-info p {
+    margin: 0;
+
+    color: #bdb7ad;
+
+    font-family: "Lora", serif;
+    font-size: 12px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.btn-novedad {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 4px;
+
+    align-self: flex-end;
+
+    width: auto;
+    min-height: 20px;
+
+    margin: auto;
+
+    padding: 2px 7px;
+
+    color: #f0e9df;
+
+    background-color: #6d1f29;
+
+    border-radius: 3px;
+
+    font-family: "Lora", serif;
+    font-size: 12px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.btn-novedad i {
+    font-size: 4px;
+}
+
+
+.btn-novedad:hover {
+    color: #fff;
+
+    background-color: #8a2935;
+
+    transform: translateX(1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .novedades-grid {
+        max-width: 320px;
+    }
+
+    .novedades-col {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .novedad-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .novedades-contenido {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .novedad-card {
+        height: 120px;
+    }
+
+    .novedad-imagen {
+        width: 95px;
+        min-width: 95px;
+    }
+
+    .novedad-info h3 {
+        font-size: 12px;
+    }
+
+    .novedad-info p {
+        font-size: 8px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   EL CONOCIMIENTO TE ESPERA
+   ========================================================= */
+
+.conocimiento {
+    width: 100%;
+
+    background-color: #132820;
+
+    color: #eee9df;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+
+.conocimiento-contenido {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 20px 20px 24px;
+
+    text-align: center;
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULO
+   --------------------------------------------------------- */
+
+.conocimiento h2 {
+    margin: 0 0 14px;
+
+    color: #b99750;
+
+    font-family: "Cinzel", serif;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO
+   --------------------------------------------------------- */
+
+.conocimiento p {
+    max-width: 340px;
+
+    margin: 0 auto 11px;
+
+    color: #ddd8cf;
+
+    font-family: "Lora", serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   BOTÓN EXPLORAR
+   --------------------------------------------------------- */
+
+.btn-explorar {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 76px;
+
+    height: 32px;
+
+    padding: 0 9px;
+
+    color: #b99750;
+
+    background-color: transparent;
+
+    border: 1px solid #8f743d;
+
+    border-radius: 3px;
+
+    font-family: "Lora", serif;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.btn-explorar:hover {
+    color: #17251f;
+
+    background-color: #b99750;
+
+    border-color: #b99750;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .novedades-grid {
+        grid-template-columns: minmax(280px, 312px);
+    }
+
+    .novedad-card {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .novedades-contenido {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .novedad-card {
+        height: 88px;
+    }
+
+    .novedad-imagen {
+        width: 95px;
+        min-width: 95px;
+    }
+}
